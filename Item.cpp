@@ -45,14 +45,14 @@ Item::Item() //default constructor (set values using setters)
 {
 	this->itemsLeft = 100; //defaulted to 100 items left
 	this->price = 1.00 //default price of $1
-	this->description = "null"; /*all strings are initially set to null
+	this->description = NULL; /*all strings are initially set to null
 	remember to change them if a food or drink item has one of these attributes.
 
  ***ALL ITEMS SHOULD HAVE NAME AND DESCRIPTIONS***
 															 */
-	this->name = "null";
-	this->size = "null";
-	this->flavor = "null";
+	this->name = NULL;
+	this->size = NULL;
+	this->flavor = NULL;
 	this->quantity = 1; //defaulted to 1 item for the order
 }
 
