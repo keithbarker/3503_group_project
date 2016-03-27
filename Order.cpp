@@ -36,6 +36,7 @@ void Order::addItem(Item &toBeAdded) {
 void Order::removeItem(Item &toBeRemoved) {
 
 
+
 }
 
 void Order::findSubtotal() {
