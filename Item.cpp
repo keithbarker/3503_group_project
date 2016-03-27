@@ -1,45 +1,4 @@
-#include <string>
-
-class Item
-{
-
-private:
-	int itemsLeft
-	double price;
-	std::string description;
-	std::string name;
-	std::string size;
-	std:string flavor;
-	int quantity;
-
-public:
-
-	/*getters and setter
-		methods declaration*/
-
-	void setItemsLeft(int itemsLeft);
-	int getItemsLeft();
-
-	void setPrice(double price);
-	double getPrice();
-
-	void setDescription(std::string description);
-	std::string getDescription();
-
-	void setName(std::string name);
-	std::string getName();
-
-	void setSize(std::string size);
-	std::string getSize();
-
-	void setFlavor(std::String flavor);
-	std::string getFlavor();
-
-	void setQuantity(int quantity);
-	int getQuantity();
-
-	Item(); //default constructor declaration
-};
+#include "Item.h"
 
 Item::Item() //default constructor (set values using setters)
 {
@@ -56,72 +15,72 @@ Item::Item() //default constructor (set values using setters)
 	this->quantity = 1; //defaulted to 1 item for the order
 }
 
-void setItemsLeft(int itemsLeft) //set items left
+void Item::setItemsLeft(int itemsLeft) //set items left
 {
 	this->itemsLeft = itemsLeft;
 }
 
-int getItemsLeft() //get items left
+int Item::getItemsLeft() //get items left
 {
 	return itemsLeft;
 }
 
-void setPrice(double price) //set price
+void Item::setPrice(double price) //set price
 {
 	this->price = price;
 }
 
-double getPrice() //get price
+double Item::getPrice() //get price
 {
 	return price;
 }
 
-void setDescription(std::string description) //set description
+void Item::setDescription(std::string description) //set description
 {
 	this->description = description;
 }
 
-std::string getDescription() //get description
+std::string Item::getDescription() //get description
 {
 	return description;
 }
 
-void setName(std::string name) //set name
+void Item::setName(std::string name) //set name
 {
 	this->name = name;
 }
 
-std::string getName() //get name
+std::string Item::getName() //get name
 {
 	return name;
 }
 
-void setSize(std::string size) //set size
+void Item::setSize(std::string size) //set size
 {
 	this->size = size;
 }
 
-std::string getSize() //get size
+std::string Item::getSize() //get size
 {
 	return size;
 }
 
-void setFlavor(std::string flavor) //set flavor
+void Item::setFlavor(std::string flavor) //set flavor
 {
 	this->flavor = flavor;
 }
 
-std::string getFlavor() //get flavor
+std::string Item::getFlavor() //get flavor
 {
 	return flavor;
 }
 
-void setQuantity(int quantity) //set quantity
+void Item::setQuantity(int quantity) //set quantity
 {
 	this->quantity = quantity;
 }
 
-int getQuantity() //get quantity
+int Item::getQuantity() //get quantity
 {
 	return quantity;
 }
