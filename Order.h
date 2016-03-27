@@ -24,4 +24,5 @@ public:
 	void removeItem(Item &toBeRemoved);	//remove food or drink from item array
 	void findSubtotal();	//calculates subtotal based on price of each item in array
 	void findTotal();	//calculate total from tax and subtotal
+
 };
