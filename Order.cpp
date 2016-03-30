@@ -25,11 +25,18 @@ double Order::getTotal() {
 	return total;
 }
 
-void Order::printReceipt(Item &items, const double tax, double subtotal, double total) {
-
+void Order::printReceipt() {
+	// need to know how gui works in order to implement
 }
 
 void Order::addItem(Item &toBeAdded) {
+	for (int i = 0; i < itemArray.size(); ++i) {
+		if () {	//if item already in array increase quantity of item
+
+
+
+		}
+	}
 
 }
 
@@ -40,12 +47,15 @@ void Order::removeItem(Item &toBeRemoved) {
 }
 
 void Order::findSubtotal() {
-
-	
+	double tempSubtotal = 0;	//temp counter
+	for (int i = 0; i < itemArray.size(); ++i) {
+		if (itemArray.at(i) != NULL) {
+			tempSubtotal += itemArray.at(i).getPrice();
+		}
+	}
+	subtotal = tempSubtotal;
 }
 
 void Order::findTotal() {
-	
-
-
+	total = subtotal + (subtotal * tax);
 }
