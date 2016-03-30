@@ -1,12 +1,13 @@
 #pragma once
 
 #include "Item.h"
+#include <vector>
 
 class Order {
 	const double tax = 0.06;
 	double subtotal;
 	double total;
-	Item *items = new Item[50](NULL);	//dynamic array for items that should initialize everything to null(have not tested yet)
+	std::vector<Item> itemArray;	//dynamic vector for items (easier to add and remove with vector)
 
 public:
 	Order();	//default order constructor called immediately after starting new order
@@ -19,7 +20,7 @@ public:
 	void setTotal(double total);
 	double getTotal();
 
-	void printReceipt(Item &items, const double tax, double subtotal, double total);
+	void printReceipt();
 	void addItem(Item &toBeAdded);	// add food or drink to item array
 	void removeItem(Item &toBeRemoved);	//remove food or drink from item array
 	void findSubtotal();	//calculates subtotal based on price of each item in array
