@@ -1,5 +1,5 @@
-#ifndef MOTHER_H
-#define MOTHER_H
+#ifndef DRINKS_H
+#define DRINKS_H
 
 class Drinks: public Item
 {
