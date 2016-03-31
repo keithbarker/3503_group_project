@@ -8,7 +8,7 @@ Drinks::Drinks(){
 this->IceIce=false;
 }
 
-Drinks::hasIce(bool wantIce){
-this->IceIce=wantIce;
+Drinks::hasIce(bool IceIce){
+this->IceIce=IceIce;
 return IceIce;
 }
