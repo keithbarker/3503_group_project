@@ -5,16 +5,10 @@
 
 using namespace std;
 Drinks::Drinks(){
-
+this->IceIce=false;
 }
 
-Drinks::hasIce(){
-bool IceIce=false;
-cout<<"Would you like ice(Yes or No)?"
-string ice;
-cin>>ice;
-if(ice==yes||ice==Yes){
-	IceIce=true;
-}
+Drinks::hasIce(bool wantIce){
+this->IceIce=wantIce;
 return IceIce;
 }
