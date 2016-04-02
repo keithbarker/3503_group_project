@@ -1,30 +1,11 @@
+#include "mainwindow.h"
+#include <QApplication>
 
-#include "Item.h"
-#include "Order.h"
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
-int main() {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	return 0;
+    return a.exec();
 }

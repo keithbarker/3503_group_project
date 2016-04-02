@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>770</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(239, 239, 239);</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1200</width>
+      <height>770</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="main_page">
+     <widget class="QPushButton" name="chick_nug_button">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>90</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Chicken
+Nuggets</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hotdog_button">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+selection-background-color: rgb(66, 111, 153);</string>
+      </property>
+      <property name="text">
+       <string>Hot Dog</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="admin_button">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>20</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Admin</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="food_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>150</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 26pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Food</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="soda_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>520</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Soft Drink</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="checkout_button">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>690</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Checkout</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="salad_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Salad</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chick_sand_button">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>90</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Chicken
+Sandwich</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hamburger_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+selection-color: rgb(255, 170, 127);
+font: 16pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+selection-background-color: rgb(66, 111, 153);</string>
+      </property>
+      <property name="text">
+       <string>Hamburger</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="milk_shake_button">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>520</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Milk Shake</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tea_button">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>520</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Tea</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="drink_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>460</y>
+        <width>150</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 26pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Drinks</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fries_button">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>260</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Fries</string>
+      </property>
+     </widget>
+     <widget class="QListView" name="order_list">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>90</y>
+        <width>401</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="admin_page">
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>230</y>
+        <width>521</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>This is the admin page</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="admin_button_2">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>50</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="hamburge_toppings_page">
+     <widget class="QLabel" name="food_label_2">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>70</y>
+        <width>800</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 26pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>What toppings would you like on your hamburger?</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bacon_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>170</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Bacon</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cheese_button">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>170</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Cheese</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="lettuce_button">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>170</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Lettuce</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tomatoes_button">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>170</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Tomatoes</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pickles_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>350</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Pickles</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="onions_button">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>350</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Onions</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ketchup_button">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>350</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Ketchup</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mustard_button">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>350</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Mustard</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bbq_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>530</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Barbeque</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mayo_button">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>530</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Mayo</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="done_button">
+      <property name="geometry">
+       <rect>
+        <x>1010</x>
+        <y>680</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Done</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
