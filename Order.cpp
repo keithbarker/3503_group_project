@@ -10,7 +10,7 @@ double Order::getTax() {
 }
 
 void Order::setSubtotal(double subtotal) {
-	this->subtotal = subtotal
+    this->subtotal = subtotal;
 }
 
 double Order::getSubtotal() {
@@ -29,29 +29,28 @@ void Order::printReceipt() {
 	// need to know how gui works in order to implement
 }
 
-void Order::addItem(Item &toBeAdded) {
-	for (int i = 0; i < itemArray.size(); ++i) {
-		if () {	//if item already in array increase quantity of item
+// TODO: Come back to this section to add items.
+//void Order::addItem(Item &toBeAdded) {
+    //for (int i = 0; i < itemArray.size(); ++i) {
+    //	if () {	//if item already in array increase quantity of item
 
 
 
-		}
-	}
+    //	}
+    //}
 
-}
+//}
 
-void Order::removeItem(Item &toBeRemoved) {
-
-
-
-}
+// TODO: Come back to this section to remove items.
+//void Order::removeItem(Item &toBeRemoved) {
+//}
 
 void Order::findSubtotal() {
 	double tempSubtotal = 0;	//temp counter
-	for (int i = 0; i < itemArray.size(); ++i) {
-		if (itemArray.at(i) != NULL) {
-			tempSubtotal += itemArray.at(i).getPrice();
-		}
+    for (unsigned int i = 0; i < itemArray.size(); ++i) {
+        // If check not necessary, since vector::size() returns
+        // the number of indexes with items in it.
+        tempSubtotal += itemArray.at(i).getPrice();
 	}
 	subtotal = tempSubtotal;
 }

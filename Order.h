@@ -2,12 +2,13 @@
 
 #include "Item.h"
 #include <vector>
+using namespace std;
 
 class Order {
 	const double tax = 0.06;
 	double subtotal;
 	double total;
-	std::vector<Item> itemArray;	//dynamic vector for items (easier to add and remove with vector)
+    vector<Item> itemArray;	//dynamic vector for items (easier to add and remove with vector)
 
 public:
 	Order();	//default order constructor called immediately after starting new order
