@@ -5,10 +5,10 @@
 
 using namespace std;
 Drinks::Drinks(){
-this->IceIce=false;
+    this->IceIce=false;
 }
 
-Drinks::hasIce(bool IceIce){
-this->IceIce=IceIce;
-return IceIce;
+bool Drinks::hasIce(bool IceIce){
+    this->IceIce=IceIce;
+    return IceIce;
 }
