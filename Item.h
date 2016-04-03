@@ -1,19 +1,19 @@
 #pragma once
 
 #include <string>
-#include "Order.h"
+using namespace std;
 
 
 class Item
 {
 
 private:
-	int itemsLeft
+    int itemsLeft;
 	double price;
-	std::string description;
-	std::string name;
-	std::string size;
-	std:string flavor;
+    string description;
+    string name;
+    string size;
+    string flavor;
 	int quantity;
 
 public:
@@ -28,17 +28,17 @@ public:
 	void setPrice(double price);
 	double getPrice();
 
-	void setDescription(std::string description);
-	std::string getDescription();
+    void setDescription(string description);
+    string getDescription();
 
-	void setName(std::string name);
-	std::string getName();
+    void setName(string name);
+    string getName();
 
-	void setSize(std::string size);
-	std::string getSize();
+    void setSize(string size);
+    string getSize();
 
-	void setFlavor(std::String flavor);
-	std::string getFlavor();
+    void setFlavor(string flavor);
+    string getFlavor();
 
 	void setQuantity(int quantity);
 	int getQuantity();
