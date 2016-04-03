@@ -97,14 +97,14 @@ class Salad: public Food, public Print
 	
 };
 
-int main()
-{
-	Burger burger("Hamburger", "USDA Prime Beef", 3.99);
-	burger.print(burger.str1(), burger.str2(), burger.num());
-	Fries fries("French Fries", "Hand-cut with a dash of sea salt", 0.99);
-	fries.print(fries.str1(), fries.str2(), fries.num());
-	// DON'T USE THE DESCRIPTION BELOW
-	Hotdog hotdog("Hotdog", "Kosher, so you can gobble that meaty sausage without shaming your rabbi", 1.25);
-	hotdog.print(hotdog.str1(), hotdog.str2(), hotdog.num());
-	return 0;
-}
+//int main()
+//{
+//	Burger burger("Hamburger", "USDA Prime Beef", 3.99);
+//	burger.print(burger.str1(), burger.str2(), burger.num());
+//	Fries fries("French Fries", "Hand-cut with a dash of sea salt", 0.99);
+//	fries.print(fries.str1(), fries.str2(), fries.num());
+//	// DON'T USE THE DESCRIPTION BELOW
+//	Hotdog hotdog("Hotdog", "Kosher, so you can gobble that meaty sausage without shaming your rabbi", 1.25);
+//	hotdog.print(hotdog.str1(), hotdog.str2(), hotdog.num());
+//	return 0;
+//}
