@@ -1,4 +1,7 @@
 #include "mainwindow.h"
+#include "Item.h"
+#include "Drinks.h"
+#include "Order.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
