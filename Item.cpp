@@ -15,6 +15,10 @@ Item::Item() //default constructor (set values using setters)
 	this->quantity = 1; //defaulted to 1 item for the order
 }
 
+//Item initializer list
+Item::Item(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity)
+    : itemsLeft(itemsLeft), price(price), name(name), description(description), size(size), flavor(flavor), quantity(quantity){}
+
 void Item::setItemsLeft(int itemsLeft) //set items left
 {
 	this->itemsLeft = itemsLeft;

@@ -3,8 +3,9 @@
 class Drinks: public Item
 {
 private:
-	bool IceIce;
+    bool IceIce = false;    //default drink has no ice
 public:
 	Drinks();
-	bool hasIce(bool IceIce);
+    bool hasIce();
+    void setIce();
 };

@@ -22,6 +22,7 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     Drinks.h \
     Item.h \
-    Order.h
+    Order.h \
+    Food.h
 
 FORMS    += mainwindow.ui

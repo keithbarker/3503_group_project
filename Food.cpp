@@ -1,6 +1,11 @@
-#include <iostream>
-#include <string>
+#include "Food.h"
 
+//call this when adding food to order
+Food::Food(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity)
+    :Item(itemsLeft,price,name,description,size,flavor,quantity){}
+
+
+/*
 class Food
 {
 	protected:
@@ -96,6 +101,8 @@ class Salad: public Food, public Print
 			{ return price; }
 	
 };
+
+*/
 
 //int main()
 //{
