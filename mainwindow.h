@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
+#include <QPushButton>
+#include <QString>
+
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -40,27 +45,11 @@ private slots:
 
     void on_admin_button_2_clicked();
 
-    void on_bacon_button_clicked();
-
-    void on_cheese_button_clicked();
-
-    void on_lettuce_button_clicked();
-
-    void on_tomatoes_button_clicked();
-
-    void on_pickles_button_clicked();
-
-    void on_onions_button_clicked();
-
-    void on_ketchup_button_clicked();
-
-    void on_mustard_button_clicked();
-
-    void on_bbq_button_clicked();
-
-    void on_mayo_button_clicked();
-
     void on_done_button_clicked();
+
+    void set_button_style(QPushButton *button);
+
+    void clear_items(QLayout *layout);
 
 private:
     Ui::MainWindow *ui;
