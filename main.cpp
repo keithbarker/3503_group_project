@@ -2,6 +2,7 @@
 #include "Item.h"
 #include "Drinks.h"
 #include "Order.h"
+#include "Food.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
