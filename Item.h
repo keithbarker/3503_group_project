@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "qobject.h"
 using namespace std;
 
 
@@ -45,5 +46,6 @@ public:
     string getFlavor();
 
     void increaseQuantity();
+    void decreaseQuantity();
 	int getQuantity();
 };
