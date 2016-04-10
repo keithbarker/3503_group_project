@@ -4,10 +4,11 @@
 using namespace std;
 
 
-class Item
+class Item : public QObject
 {
 
 private:
+    Q_OBJECT
     int itemsLeft;
 	double price;
     string name;
@@ -43,6 +44,6 @@ public:
     void setFlavor(string flavor);
     string getFlavor();
 
-	void setQuantity(int quantity);
+    void increaseQuantity();
 	int getQuantity();
 };
