@@ -79,9 +79,14 @@ std::string Item::getFlavor() //get flavor
 	return flavor;
 }
 
-void Item::setQuantity(int quantity) //set quantity
+void Item::increaseQuantity() //set quantity
 {
-	this->quantity = quantity;
+    this->quantity = this->quantity + 1;
+}
+
+void Item::decreaseQuantity()
+{
+    this->quantity = this->quantity - 1;
 }
 
 int Item::getQuantity() //get quantity
