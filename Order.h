@@ -4,7 +4,9 @@
 #include <vector>
 using namespace std;
 
-class Order {
+class Order : public QOBJECT
+{
+    Q_OBJECT
 	const double tax = 0.06;
 	double subtotal;
 	double total;
