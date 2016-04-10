@@ -58,3 +58,24 @@ void Order::findSubtotal() {
 void Order::findTotal() {
 	total = subtotal + (subtotal * tax);
 }
+
+void Order::addItem(Item &toBeAdded){
+    bool alreadyInArray = false;
+    //first determine if instance of object already in Item Array
+    for(unsigned int i = 0; i < itemArray.size(); ++i){
+        // if statement may have to be changed to accomodate for
+        // items with different toppings but same food type being added
+        // currently only checks if name of item to add is same
+        // as one already in array
+        if(itemArray[i].getName() == toBeAdded.getName()){
+            //quantity of item in array increased
+            alreadyInArray = true;
+            itemArray[i].increaseQuantity();
+            break;
+        }
+    }
+    if(!alreadyInArray){    //if item not in array yet
+        itemArray.push_back(toBeAdded);
+
+    }
+}
