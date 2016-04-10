@@ -2,9 +2,10 @@
 
 #include "Item.h"
 #include <vector>
+#include "qobject.h"
 using namespace std;
 
-class Order : public QOBJECT
+class Order : public QObject
 {
     Q_OBJECT
 	const double tax = 0.06;
