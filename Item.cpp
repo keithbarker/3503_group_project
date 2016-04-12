@@ -2,17 +2,17 @@
 
 Item::Item() //default constructor (set values using setters)
 {
-	this->itemsLeft = 100; //defaulted to 100 items left
-	this->price = 1.00; //default price of $1
-	this->description = ""; /*all strings are initially set to null
-	remember to change them if a food or drink item has one of these attributes.
+    this->itemsLeft = 100; //defaulted to 100 items left
+    this->price = 1.00; //default price of $1
+    this->description = ""; /*all strings are initially set to null
+    remember to change them if a food or drink item has one of these attributes.
 
  ***ALL ITEMS SHOULD HAVE NAME AND DESCRIPTIONS***
-															 */
-        this->name = "";
-        this->size = "";
-        this->flavor = "";
-	this->quantity = 1; //defaulted to 1 item for the order
+                                                             */
+    this->name = "";
+    this->size = "";
+    this->flavor = "";
+    this->quantity = 1; //defaulted to 1 item for the order
 }
 
 //Item initializer list

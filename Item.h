@@ -19,7 +19,7 @@ private:
 	int quantity;
 
 public:
-	Item(); //default constructor declaration
+    Item(); //default constructor declaration
 
     //constructor called when instance of Food or Drink is created
     Item(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity);
