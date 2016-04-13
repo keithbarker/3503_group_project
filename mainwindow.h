@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QString>
+#include "Order.h"
 
 using namespace std;
 
@@ -19,6 +20,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+    void button_factory(string name, int position);
 
 private slots:
     void on_hamburger_button_clicked();
@@ -51,8 +54,11 @@ private slots:
 
     void clear_items(QLayout *layout);
 
+    void update_list();
+
 private:
     Ui::MainWindow *ui;
+    Order *new_order;
 };
 
 #endif // MAINWINDOW_H
