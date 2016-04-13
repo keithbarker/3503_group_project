@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "qobject.h"
+#include <QObject>
 using namespace std;
 
 
@@ -10,6 +10,7 @@ class Item : public QObject
 
 private:
     Q_OBJECT
+    int id;
     int itemsLeft;
 	double price;
     string name;
@@ -17,15 +18,20 @@ private:
     string size;
     string flavor;
 	int quantity;
+    vector<string> requested_extras; // Used to store selected "toppings".
+    vector<string> allowed_extras; // Used to store list of allowed "toppings".
 
 public:
     Item(); //default constructor declaration
 
     //constructor called when instance of Food or Drink is created
-    Item(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity);
+    Item(int id, int itemsLeft, double price, string name, string description, string size, string flavor, int quantity);
 
 	/*getters and setter
 	methods declaration*/
+
+    void setId(int id);
+    int getId();
 
 	void setItemsLeft(int itemsLeft);
 	int getItemsLeft();
