@@ -3,6 +3,7 @@
 Order::Order(){
 	this->subtotal = 0;
 	this->total = 0;
+    this->itemArray = new vector<Item*>();
 }
 
 double Order::getTax() {
@@ -29,28 +30,22 @@ void Order::printReceipt() {
 	// need to know how gui works in order to implement
 }
 
-// TODO: Come back to this section to add items.
-//void Order::addItem(Item &toBeAdded) {
-    //for (int i = 0; i < itemArray.size(); ++i) {
-    //	if () {	//if item already in array increase quantity of item
-
-
-
-    //	}
-    //}
-
-//}
-
-// TODO: Come back to this section to remove items.
-//void Order::removeItem(Item &toBeRemoved) {
-//}
+void Order::removeItem(int id) {
+    vector<Item*>::iterator it;
+    for (it = itemArray->begin(); it != itemArray->end(); it++) {
+        if ((*it)->getId() == id) {
+            itemArray->erase(it);
+        }
+    }
+    emit itemsChanged();
+}
 
 void Order::findSubtotal() {
 	double tempSubtotal = 0;	//temp counter
-    for (unsigned int i = 0; i < itemArray.size(); ++i) {
+    for (unsigned int i = 0; i < itemArray->size(); ++i) {
         // If check not necessary, since vector::size() returns
         // the number of indexes with items in it.
-        tempSubtotal += itemArray.at(i).getPrice();
+        tempSubtotal += itemArray->at(i)->getPrice();
 	}
 	subtotal = tempSubtotal;
 }
@@ -59,23 +54,35 @@ void Order::findTotal() {
 	total = subtotal + (subtotal * tax);
 }
 
-void Order::addItem(Item &toBeAdded){
-    bool alreadyInArray = false;
-    //first determine if instance of object already in Item Array
-    for(unsigned int i = 0; i < itemArray.size(); ++i){
-        // if statement may have to be changed to accomodate for
-        // items with different toppings but same food type being added
-        // currently only checks if name of item to add is same
-        // as one already in array
-        if(itemArray[i].getName() == toBeAdded.getName()){
-            //quantity of item in array increased
-            alreadyInArray = true;
-            itemArray[i].increaseQuantity();
-            break;
-        }
-    }
-    if(!alreadyInArray){    //if item not in array yet
-        itemArray.push_back(toBeAdded);
+void Order::addItem(Item *toBeAdded){
+    // IMO no need to check if the item already exists.
+    // Let them add however many hamburgers they want and I don't think
+    // there is a way to add the same exact item twice.
+    itemArray->push_back(toBeAdded);
+    emit itemsChanged();
+//    bool alreadyInArray = false;
+//    //first determine if instance of object already in Item Array
+//    for(unsigned int i = 0; i < itemArray.size(); ++i){
+//        // if statement may have to be changed to accomodate for
+//        // items with different toppings but same food type being added
+//        // currently only checks if name of item to add is same
+//        // as one already in array
+//        if(itemArray[i].getName() == toBeAdded.getName()){
+//            //quantity of item in array increased
+//            alreadyInArray = true;
+//            itemArray[i].increaseQuantity();
+//            break;
+//        }
+//    }
+//    if(!alreadyInArray){    //if item not in array yet
+//        itemArray.push_back(toBeAdded);
 
+//    }
+}
+
+int Order::getItemCount() {
+    if (itemArray != NULL && !itemArray->empty()) {
+        return itemArray->size();
     }
+    return 0;
 }
