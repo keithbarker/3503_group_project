@@ -6,8 +6,8 @@
 using namespace std;
 
 //call this constructor with appropriate arguments when buying type of drink (Drink constructor calls Item constructor)
-Drinks::Drinks(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity)
-    :Item(itemsLeft,price,name,description,size,flavor,quantity){}
+Drinks::Drinks(int id, int itemsLeft, double price, string name, string description, string size, string flavor, int quantity)
+    :Item(id,itemsLeft,price,name,description,size,flavor,quantity){}
 
 
 bool Drinks::hasIce(){

@@ -1,8 +1,8 @@
 #include "Food.h"
 
 //call this when adding food to order
-Food::Food(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity)
-    :Item(itemsLeft,price,name,description,size,flavor,quantity){}
+Food::Food(int id, int itemsLeft, double price, string name, string description, string size, string flavor, int quantity)
+    :Item(id,itemsLeft,price,name,description,size,flavor,quantity){}
 
 
 /*

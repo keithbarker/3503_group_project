@@ -9,7 +9,7 @@ class Food : public Item{
 
 public:
     Food();
-    Food(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity);
+    Food(int id, int itemsLeft, double price, string name, string description, string size, string flavor, int quantity);
 
 };
 
