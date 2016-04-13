@@ -219,7 +219,7 @@ void MainWindow::on_soda_button_clicked()
     button_factory("Cherry Soda", 1);
     button_factory("Cola",2);
     button_factory("Orange Soda",3);
-    button_factory("Lemon-Lime Soda",4);
+    button_factory("Lemon-Lime",4);
     button_factory("Grape",5);
     button_factory("Root Beer",6);
     button_factory("Ginger Ale",7);
@@ -244,8 +244,8 @@ void MainWindow::on_tea_button_clicked()
 
     // Create the topping buttons.
     button_factory("Green Tea", 1);
-    button_factory("Peach Iced Tea",2);
-    button_factory("Strawberry Iced Tea",3);
+    button_factory("Peach Tea",2);
+    button_factory("Strawberry",3);
     button_factory("Sweet Tea",4);
     button_factory("Unsweet Tea",5);
     button_factory("Lemon Tea",6);
