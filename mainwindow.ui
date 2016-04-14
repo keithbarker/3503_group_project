@@ -29,7 +29,7 @@ selection-background-color: rgb(66, 111, 153);
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>-60</y>
       <width>1200</width>
       <height>770</height>
      </rect>
@@ -332,6 +332,74 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
         </layout>
        </widget>
       </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="confirm_page">
+     <widget class="QLabel" name="confirm_label">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>80</y>
+        <width>541</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Would you like to complete your order?</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="no_confirmbutton">
+      <property name="geometry">
+       <rect>
+        <x>154</x>
+        <y>322</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+        max-width: 150px;
+        height: 150px;
+        selection-color: rgb(255, 170, 127);
+        font: 16pt 'MS Shell Dlg 2';
+        color: rgb(255, 255, 255);
+        selection-background-color: rgb(66, 111, 153);</string>
+      </property>
+      <property name="text">
+       <string>No</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="yes_confirm_button">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>320</y>
+        <width>150</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>152</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+        max-width: 150px;
+        height: 150px;
+        selection-color: rgb(255, 170, 127);
+        font: 16pt 'MS Shell Dlg 2';
+        color: rgb(255, 255, 255);
+        selection-background-color: rgb(66, 111, 153);</string>
+      </property>
+      <property name="text">
+       <string>Yes</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="admin_page">

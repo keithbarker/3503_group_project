@@ -55,7 +55,7 @@ void MainWindow::on_hamburger_button_clicked()
       */
 
     // This is what changes "pages".
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_hotdog_button_clicked()
@@ -88,7 +88,7 @@ void MainWindow::on_hotdog_button_clicked()
       */
 
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_chick_sand_button_clicked()
@@ -119,7 +119,7 @@ void MainWindow::on_chick_sand_button_clicked()
       to the price as well (bacon, cheese, etc.)
       */
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_chick_nug_button_clicked()
@@ -144,7 +144,7 @@ void MainWindow::on_chick_nug_button_clicked()
     button_factory("Medium",7);
     button_factory("Large",8);
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_salad_button_clicked()
@@ -177,7 +177,7 @@ void MainWindow::on_salad_button_clicked()
     button_factory("Medium",16);
     button_factory("Large",17);
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_fries_button_clicked()
@@ -201,7 +201,7 @@ void MainWindow::on_fries_button_clicked()
     button_factory("Medium",7);
     button_factory("Large",8);
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_soda_button_clicked()
@@ -228,7 +228,7 @@ void MainWindow::on_soda_button_clicked()
     button_factory("Large",10);
 
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_tea_button_clicked()
@@ -253,7 +253,7 @@ void MainWindow::on_tea_button_clicked()
     button_factory("Medium",8);
     button_factory("Large",9);
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_milk_shake_button_clicked()
@@ -277,18 +277,17 @@ void MainWindow::on_milk_shake_button_clicked()
     button_factory("Small",7);
     button_factory("Medium",8);
     button_factory("Large",9);
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_admin_button_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_checkout_button_clicked()
 {
-    // This is where we will add the confirmation page.
-    // Then print out the receipt.
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_admin_button_2_clicked()
@@ -428,4 +427,14 @@ void MainWindow::update_list() {
         //int id = (*it)->getId();
         //connect(remove_button, SIGNAL(clicked(bool)), new_order, SLOT(removeItem(int));
     }
+}
+
+void MainWindow::on_no_confirmbutton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_yes_confirm_button_clicked()
+{
+
 }

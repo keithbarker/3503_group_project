@@ -56,6 +56,10 @@ private slots:
 
     void update_list();
 
+    void on_no_confirmbutton_clicked();
+
+    void on_yes_confirm_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     Order *new_order;
