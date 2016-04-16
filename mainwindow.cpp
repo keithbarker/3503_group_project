@@ -354,7 +354,7 @@ void MainWindow::clear_items(QLayout *layout)
     {
         if (item->layout()) {
             clear_items(item->layout());
-            delete item->layout();
+           // delete item->layout();
         }
         if (item->widget())
         {
@@ -475,5 +475,15 @@ void MainWindow::on_no_confirmbutton_clicked()
 
 void MainWindow::on_yes_confirm_button_clicked()
 {
-    new_order->removeItem(0);
+   // new_order->removeItem(0); //caused problems
+   ui->stackedWidget->setCurrentIndex(4);
+}
+
+
+void MainWindow::on_receipt_done_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+
+
+
 }

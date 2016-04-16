@@ -60,6 +60,8 @@ private slots:
 
     void on_yes_confirm_button_clicked();
 
+    void on_receipt_done_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     Order *new_order;

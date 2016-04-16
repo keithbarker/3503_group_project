@@ -34,6 +34,9 @@ selection-background-color: rgb(66, 111, 153);
       <height>770</height>
      </rect>
     </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
     <widget class="QWidget" name="main_page">
      <widget class="QPushButton" name="chick_nug_button">
       <property name="geometry">
@@ -338,8 +341,8 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
      <widget class="QLabel" name="confirm_label">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>80</y>
+        <x>370</x>
+        <y>140</y>
         <width>541</width>
         <height>181</height>
        </rect>
@@ -354,8 +357,8 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
      <widget class="QPushButton" name="no_confirmbutton">
       <property name="geometry">
        <rect>
-        <x>154</x>
-        <y>322</y>
+        <x>300</x>
+        <y>340</y>
         <width>150</width>
         <height>150</height>
        </rect>
@@ -376,8 +379,8 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
      <widget class="QPushButton" name="yes_confirm_button">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>320</y>
+        <x>680</x>
+        <y>340</y>
         <width>150</width>
         <height>150</height>
        </rect>
@@ -636,6 +639,77 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout12"/>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="receipt_page">
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>140</y>
+        <width>441</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>439</width>
+         <height>519</height>
+        </rect>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>-1</y>
+          <width>441</width>
+          <height>521</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout"/>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="receipt_label">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>60</y>
+        <width>381</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 26pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Transaction Complete!</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="receipt_done_button">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>660</y>
+        <width>121</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Done</string>
+      </property>
      </widget>
     </widget>
    </widget>
