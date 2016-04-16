@@ -493,6 +493,7 @@ void MainWindow::on_password_enter_button_clicked()
 {
     if(ui->password_box->text() == "admin"){
         ui->stackedWidget->setCurrentIndex(5);
+         ui->password_box->setText("");
     }
 }
 
@@ -505,5 +506,6 @@ void MainWindow::on_password_box_editingFinished()
 {
     if(ui->password_box->text() == "admin"){
         ui->stackedWidget->setCurrentIndex(5);
+        ui->password_box->setText("");
     }
 }
