@@ -106,3 +106,31 @@ int Item::getQuantity() //get quantity
 {
 	return quantity;
 }
+
+void Item::addExtra(string extra)
+{
+    if (find(allowed_extras.begin(), allowed_extras.end(), extra) != allowed_extras.end())
+    {
+        this->requested_extras.push_back(extra);
+    }
+}
+
+vector<string> Item::getExtras()
+{
+    return this->requested_extras;
+}
+
+void Item::removeExtra(string extra)
+{
+    vector<string>::iterator extra_it = find(requested_extras.begin(), requested_extras.end(), extra);
+
+    if (extra_it != requested_extras.end())
+    {
+        requested_extras.erase(extra_it);
+    }
+}
+
+void Item::addAllowedExtras(vector<string> extras)
+{
+    this->allowed_extras = extras;
+}

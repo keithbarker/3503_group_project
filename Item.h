@@ -54,4 +54,10 @@ public:
     void increaseQuantity();
     void decreaseQuantity();
 	int getQuantity();
+
+    void addExtra(string extra);
+    vector<string> getExtras();
+    void removeExtra(string extra);
+
+    void addAllowedExtras(vector<string> extras);
 };
