@@ -29,7 +29,7 @@ void MainWindow::on_hamburger_button_clicked()
     Item *hamburger_item = new Item();
     hamburger_item->setId(new_order->getItemCount() + 1);
     hamburger_item->setItemsLeft(99);
-    hamburger_item->setPrice(3.90);
+    hamburger_item->setPrice(3.99);
     hamburger_item->setName(string("Hamburger"));
 
     // Set the allowed toppings.
@@ -52,9 +52,6 @@ void MainWindow::on_hamburger_button_clicked()
     button_factory("Mustard",8);
     button_factory("Barbeque",9);
     button_factory("Mayo",10);
-    button_factory("Small",11);
-    button_factory("Medium",12);
-    button_factory("Large",13);
 
     /*How are we going to handle different sizes and extras? For example,
       each size has a different price, and some of the toppings should add
@@ -72,8 +69,12 @@ void MainWindow::on_hotdog_button_clicked()
     Item *hotdog_item = new Item();
     hotdog_item->setId(new_order->getItemCount() + 1);
     hotdog_item->setItemsLeft(99);
-    hotdog_item->setPrice(3.90);
+    hotdog_item->setPrice(2.99);
     hotdog_item->setName(string("Hotdog"));
+
+    // Set the allowed toppings.
+    vector<string> extras {"Chili","Cheese","Onions","Sauerkraut","Relish","Ketchup","Mustard"};
+    hotdog_item->addAllowedExtras(extras);
 
     new_order->addItem(hotdog_item);
 
@@ -88,9 +89,6 @@ void MainWindow::on_hotdog_button_clicked()
     button_factory("Relish",5);;
     button_factory("Ketchup",6);
     button_factory("Mustard",7);
-    button_factory("Small",8);
-    button_factory("Medium",9);
-    button_factory("Large",10);
 
     /*How are we going to handle different sizes and extras? For example,
       each size has a different price, and some of the toppings should add
@@ -107,13 +105,16 @@ void MainWindow::on_chick_sand_button_clicked()
     Item *chick_sand_item = new Item();
     chick_sand_item->setId(new_order->getItemCount() + 1);
     chick_sand_item->setItemsLeft(99);
-    chick_sand_item->setPrice(2.25);
+    chick_sand_item->setPrice(3.49);
     chick_sand_item->setName(string("Chicken Sandwich"));
+
+    vector<string> extras {"Bacon","Cheese","Lettuce","Tomatoes","Pickles","Onions","Ketchup","Mustard","Barbeque","Mayo"};
+    chick_sand_item->addAllowedExtras(extras);
 
     new_order->addItem(chick_sand_item);
 
     // Update the toppings page label.
-    ui->food_label_2->setText("What toppings would you like on chicken sandwich?");
+    ui->food_label_2->setText("What would you like on your chicken sandwich?");
 
     // Create the topping buttons.
     button_factory("Bacon", 1);
@@ -123,9 +124,6 @@ void MainWindow::on_chick_sand_button_clicked()
     button_factory("Pickles",5);;
     button_factory("Mayo",6);
     button_factory("Barbeque",7);
-    button_factory("Small",8);
-    button_factory("Medium",9);
-    button_factory("Large",10);
 
     /*How are we going to handle different sizes and extras? For example,
       each size has a different price, and some of the toppings should add
@@ -145,20 +143,21 @@ void MainWindow::on_chick_nug_button_clicked()
     chick_nug_item->setPrice(1.99);
     chick_nug_item->setName(string("Chicken Nuggets"));
 
+    vector<string> extras {"Honey Mustard","Hot Sauce","Barbecue","Ketchup","Mustard"};
+    chick_nug_item->addAllowedExtras(extras);
+
     new_order->addItem(chick_nug_item);
 
     // Update the toppings page label.
-    ui->food_label_2->setText("What sauce would you like with your chicken nuggets?");
+    ui->food_label_2->setText("What sauce would you like?");
 
     // Create the topping buttons.
-    button_factory("Sweet & Sour Sauce", 1);
-    button_factory("Honey Mustard",2);
-    button_factory("Onions",3);
+    button_factory("Honey Mustard",1);
+    button_factory("Hot Sauce",2);
+    button_factory("Barebecue",3);
     button_factory("Ketchup",4);
     button_factory("Mustard",5);
-    button_factory("Small",6);
-    button_factory("Medium",7);
-    button_factory("Large",8);
+
 
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -173,6 +172,10 @@ void MainWindow::on_salad_button_clicked()
     salad_item->setName(string("Salad"));
 
     new_order->addItem(salad_item);
+
+    vector<string> extras {"Tomoatoes","Croutons","Almonds","Walnuts","Bacon","Cheese","Onions","Cucumbers","Ranch","Italian","Caesar"
+                           ,"Honey Mustard","Vinaigrette","Olive Oil"};
+    salad_item->addAllowedExtras(extras);
 
     // Update the toppings page label.
     ui->food_label_2->setText("What toppings would you like on your salad?");
@@ -192,9 +195,6 @@ void MainWindow::on_salad_button_clicked()
     button_factory("Honey Mustard",12);
     button_factory("Vinaigrette",13);
     button_factory("Olive Oil",14);
-    button_factory("Small",15);
-    button_factory("Medium",16);
-    button_factory("Large",17);
 
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -210,6 +210,9 @@ void MainWindow::on_fries_button_clicked()
 
     new_order->addItem(fries_item);
 
+    vector<string> extras {"Chili","Cheese","Bacon","Ketchup","Mustard"};
+    fries_item->addAllowedExtras(extras);
+
     // Update the toppings page label.
     ui->food_label_2->setText("What toppings would you like on your fries?");
 
@@ -219,9 +222,6 @@ void MainWindow::on_fries_button_clicked()
     button_factory("Bacon",3);
     button_factory("Ketchup",4);
     button_factory("Mustard",5);
-    button_factory("Small",6);
-    button_factory("Medium",7);
-    button_factory("Large",8);
 
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -232,10 +232,13 @@ void MainWindow::on_soda_button_clicked()
     Item *soda_item = new Item();
     soda_item->setId(new_order->getItemCount() + 1);
     soda_item->setItemsLeft(99);
-    soda_item->setPrice(1.25);
+    soda_item->setPrice(1.49);
     soda_item->setName(string("Soda"));
 
     new_order->addItem(soda_item);
+
+    vector<string> extras {"Cherry","Cola","Orange","Lemon-Lime","Grape","Root Beer", "Ginger Ale","Water"};
+    soda_item->addAllowedExtras(extras);
 
     // Update the toppings page label.
     ui->food_label_2->setText("What flavor of soda would you like?");
@@ -248,10 +251,7 @@ void MainWindow::on_soda_button_clicked()
     button_factory("Grape",5);
     button_factory("Root Beer",6);
     button_factory("Ginger Ale",7);
-    button_factory("Small",8);
-    button_factory("Medium",9);
-    button_factory("Large",10);
-
+    button_factory("Water",8);
 
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -262,10 +262,13 @@ void MainWindow::on_tea_button_clicked()
     Item *tea_item = new Item();
     tea_item->setId(new_order->getItemCount() + 1);
     tea_item->setItemsLeft(99);
-    tea_item->setPrice(1.00);
+    tea_item->setPrice(0.99);
     tea_item->setName(string("Tea"));
 
     new_order->addItem(tea_item);
+
+    vector<string> extras {"Honey Mustard","Hot Sauce","Barbecue","Ketchup","Mustard"};
+    tea_item->addAllowedExtras(extras);
 
     // Update the toppings page label.
     ui->food_label_2->setText("What flavor of tea would you like?");
@@ -277,9 +280,6 @@ void MainWindow::on_tea_button_clicked()
     button_factory("Sweet Tea",4);
     button_factory("Unsweet Tea",5);
     button_factory("Lemon Tea",6);
-    button_factory("Small",7);
-    button_factory("Medium",8);
-    button_factory("Large",9);
 
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -295,6 +295,9 @@ void MainWindow::on_milk_shake_button_clicked()
 
     new_order->addItem(milkshake_item);
 
+    vector<string> extras {"Chocolate","Vanilla","Strawberry","Cherry","Whipped Cream", "Sprinkles"};
+    milkshake_item->addAllowedExtras(extras);
+
     // Update the toppings page label.
     ui->food_label_2->setText("What flavor of shake would you like?");
 
@@ -305,9 +308,7 @@ void MainWindow::on_milk_shake_button_clicked()
     button_factory("Cherry",4);
     button_factory("Whipped Cream",5);
     button_factory("Sprinkles",6);
-    button_factory("Small",7);
-    button_factory("Medium",8);
-    button_factory("Large",9);
+
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -354,7 +355,7 @@ void MainWindow::clear_items(QLayout *layout)
     {
         if (item->layout()) {
             clear_items(item->layout());
-            delete item->layout();
+            //delete item->layout();
         }
         if (item->widget())
         {
