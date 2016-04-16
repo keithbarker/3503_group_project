@@ -488,3 +488,22 @@ void MainWindow::on_receipt_done_button_clicked()
 
 
 }
+
+void MainWindow::on_password_enter_button_clicked()
+{
+    if(ui->password_box->text() == "admin"){
+        ui->stackedWidget->setCurrentIndex(5);
+    }
+}
+
+void MainWindow::on_inventory_done_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_password_box_editingFinished()
+{
+    if(ui->password_box->text() == "admin"){
+        ui->stackedWidget->setCurrentIndex(5);
+    }
+}

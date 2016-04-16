@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QString>
 #include "Order.h"
+#include <QLineEdit>
 
 using namespace std;
 
@@ -61,6 +62,12 @@ private slots:
     void on_yes_confirm_button_clicked();
 
     void on_receipt_done_button_clicked();
+
+    void on_password_enter_button_clicked();
+
+    void on_inventory_done_button_clicked();
+
+    void on_password_box_editingFinished();
 
 private:
     Ui::MainWindow *ui;
