@@ -27,13 +27,13 @@ public:
 
 	void printReceipt();
     void addItem(Item *toBeAdded);	// add food or drink to item array
+    void removeItem(int id);	//remove food or drink from item array
 
 	void findSubtotal();	//calculates subtotal based on price of each item in array
 	void findTotal();	//calculate total from tax and subtotal
     int getItemCount();
 
 public slots:
-    void removeItem(int id);	//remove food or drink from item array
 
 signals:
     void itemsChanged();

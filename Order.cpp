@@ -30,13 +30,9 @@ void Order::printReceipt() {
 	// need to know how gui works in order to implement
 }
 
-void Order::removeItem(int id) {
+void Order::removeItem(int index) {
     vector<Item*>::iterator it;
-    for (it = itemArray->begin(); it != itemArray->end(); it++) {
-        if ((*it)->getId() == id) {
-            itemArray->erase(it);
-        }
-    }
+    itemArray->erase(itemArray->begin() + index);
     emit itemsChanged();
 }
 
