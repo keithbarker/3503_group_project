@@ -716,7 +716,7 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
           <height>521</height>
          </rect>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout"/>
+        <layout class="QVBoxLayout" name="receipt_layout"/>
        </widget>
       </widget>
      </widget>

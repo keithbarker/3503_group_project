@@ -244,9 +244,9 @@ void MainWindow::on_soda_button_clicked()
     ui->food_label_2->setText("What flavor of soda would you like?");
 
     // Create the topping buttons.
-    button_factory("Cherry Soda", 1);
+    button_factory("Cherry", 1);
     button_factory("Cola",2);
-    button_factory("Orange Soda",3);
+    button_factory("Orange",3);
     button_factory("Lemon-Lime",4);
     button_factory("Grape",5);
     button_factory("Root Beer",6);
@@ -468,6 +468,7 @@ void MainWindow::update_list() {
         connect(remove_button, &QPushButton::clicked, [=] {new_order->removeItem(i);});
     }
 }
+
 
 void MainWindow::on_no_confirmbutton_clicked()
 {
