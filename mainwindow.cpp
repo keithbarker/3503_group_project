@@ -32,7 +32,14 @@ void MainWindow::on_hamburger_button_clicked()
     hamburger_item->setPrice(3.90);
     hamburger_item->setName(string("Hamburger"));
 
+    // Set the allowed toppings.
+    vector<string> extras {"Bacon","Cheese","Lettuce","Tomatoes","Pickles","Onions","Ketchup","Mustard","Barbeque","Mayo"};
+    hamburger_item->addAllowedExtras(extras);
+
     new_order->addItem(hamburger_item);
+
+    // Update the toppings page label.
+    ui->food_label_2->setText("What toppings would you like on your hamburger?");
 
     // Create the topping buttons.
     button_factory("Bacon", 1);
@@ -70,6 +77,9 @@ void MainWindow::on_hotdog_button_clicked()
 
     new_order->addItem(hotdog_item);
 
+    // Update the toppings page label.
+    ui->food_label_2->setText("What toppings would you like on your hotdog?");
+
     // Create the topping buttons.
     button_factory("Chili", 1);
     button_factory("Cheese",2);
@@ -101,6 +111,9 @@ void MainWindow::on_chick_sand_button_clicked()
     chick_sand_item->setName(string("Chicken Sandwich"));
 
     new_order->addItem(chick_sand_item);
+
+    // Update the toppings page label.
+    ui->food_label_2->setText("What toppings would you like on chicken sandwich?");
 
     // Create the topping buttons.
     button_factory("Bacon", 1);
@@ -134,6 +147,9 @@ void MainWindow::on_chick_nug_button_clicked()
 
     new_order->addItem(chick_nug_item);
 
+    // Update the toppings page label.
+    ui->food_label_2->setText("What sauce would you like with your chicken nuggets?");
+
     // Create the topping buttons.
     button_factory("Sweet & Sour Sauce", 1);
     button_factory("Honey Mustard",2);
@@ -157,6 +173,9 @@ void MainWindow::on_salad_button_clicked()
     salad_item->setName(string("Salad"));
 
     new_order->addItem(salad_item);
+
+    // Update the toppings page label.
+    ui->food_label_2->setText("What toppings would you like on your salad?");
 
     // Create the topping buttons.
     button_factory("Tomatoes", 1);
@@ -191,6 +210,9 @@ void MainWindow::on_fries_button_clicked()
 
     new_order->addItem(fries_item);
 
+    // Update the toppings page label.
+    ui->food_label_2->setText("What toppings would you like on your fries?");
+
     // Create the topping buttons.
     button_factory("Chili", 1);
     button_factory("Cheese",2);
@@ -214,6 +236,9 @@ void MainWindow::on_soda_button_clicked()
     soda_item->setName(string("Soda"));
 
     new_order->addItem(soda_item);
+
+    // Update the toppings page label.
+    ui->food_label_2->setText("What flavor of soda would you like?");
 
     // Create the topping buttons.
     button_factory("Cherry Soda", 1);
@@ -242,6 +267,9 @@ void MainWindow::on_tea_button_clicked()
 
     new_order->addItem(tea_item);
 
+    // Update the toppings page label.
+    ui->food_label_2->setText("What flavor of tea would you like?");
+
     // Create the topping buttons.
     button_factory("Green Tea", 1);
     button_factory("Peach Tea",2);
@@ -266,6 +294,9 @@ void MainWindow::on_milk_shake_button_clicked()
     milkshake_item->setName(string("Milkshake"));
 
     new_order->addItem(milkshake_item);
+
+    // Update the toppings page label.
+    ui->food_label_2->setText("What flavor of shake would you like?");
 
     // Create the topping buttons.
     button_factory("Chocolate", 1);
@@ -319,8 +350,12 @@ void MainWindow::on_done_button_clicked()
 void MainWindow::clear_items(QLayout *layout)
 {
     QLayoutItem *item;
-    while((item = layout->takeAt(0)))
+    while((item = layout->takeAt(0)) != NULL)
     {
+        if (item->layout()) {
+            clear_items(item->layout());
+            delete item->layout();
+        }
         if (item->widget())
         {
             delete item->widget();
@@ -346,6 +381,10 @@ void MainWindow::button_factory(string name, int position) {
     QString topping_name = QString::fromStdString(name);
     QPushButton *topping_button = new QPushButton(topping_name);
     set_button_style(topping_button);
+    connect(topping_button, &QPushButton::toggled, [=] {
+        Item *item = new_order->itemArray->back();
+        item->addExtra(name);
+    });
 
     switch(position) {
     case 1:
@@ -423,9 +462,9 @@ void MainWindow::update_list() {
         item_line->addWidget(price);
         ui->scroll_layout->addLayout(item_line);
 
-        // Working on remove button.
-        //int id = (*it)->getId();
-        //connect(remove_button, SIGNAL(clicked(bool)), new_order, SLOT(removeItem(int));
+        // Set the function to be called when the remove button is clicked.
+        // In this case I'm using a lambda and using an inline function.
+        connect(remove_button, &QPushButton::clicked, [=] {new_order->removeItem(i);});
     }
 }
 
@@ -436,5 +475,5 @@ void MainWindow::on_no_confirmbutton_clicked()
 
 void MainWindow::on_yes_confirm_button_clicked()
 {
-
+    new_order->removeItem(0);
 }

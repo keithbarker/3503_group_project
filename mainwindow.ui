@@ -29,7 +29,7 @@ selection-background-color: rgb(66, 111, 153);
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-60</y>
+      <y>0</y>
       <width>1200</width>
       <height>770</height>
      </rect>
