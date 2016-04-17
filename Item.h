@@ -56,7 +56,7 @@ public:
 	int getQuantity();
 
     void addExtra(string extra);
-    vector<string> getExtras();
+    string getExtras();
     void removeExtra(string extra);
 
     void addAllowedExtras(vector<string> extras);

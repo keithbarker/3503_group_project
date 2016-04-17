@@ -115,9 +115,14 @@ void Item::addExtra(string extra)
     }
 }
 
-vector<string> Item::getExtras()
+string Item::getExtras()
 {
-    return this->requested_extras;
+    string extras = "Extras: ";
+    for (auto const& s : requested_extras){
+        extras += s;
+        extras += ", ";
+    }
+    return extras;
 }
 
 void Item::removeExtra(string extra)
