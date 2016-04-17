@@ -463,6 +463,13 @@ void MainWindow::update_list() {
         item_line->addWidget(price);
         ui->scroll_layout->addLayout(item_line);
 
+        //trying to put extras in cart on main page
+        QLabel *toppings = new QLabel(QString::fromStdString((*it)->getExtras()));
+        QHBoxLayout *item_line2 = new QHBoxLayout();
+        item_line2->addWidget(toppings);
+        ui->scroll_layout->addLayout(item_line2);
+
+
         // Set the function to be called when the remove button is clicked.
         // In this case I'm using a lambda and using an inline function.
         connect(remove_button, &QPushButton::clicked, [=] {new_order->removeItem(i);});
@@ -484,10 +491,9 @@ void MainWindow::on_yes_confirm_button_clicked()
 
 void MainWindow::on_receipt_done_button_clicked()
 {
+    new_order->clearOrder();    //clears itemarray and totals
+    clear_items(ui->scroll_layout); //empty list
     ui->stackedWidget->setCurrentIndex(0);
-
-
-
 }
 
 void MainWindow::on_password_enter_button_clicked()
