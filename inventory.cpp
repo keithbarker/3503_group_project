@@ -49,3 +49,93 @@ void Inventory::updateInventory(){  //call only after order completed
          }
      }
 }
+
+void Inventory::setHamburgerCount(int count)
+{
+    this->hamburgerCount = count;
+}
+
+int Inventory::getHamburgerCount()
+{
+    return this->hamburgerCount;
+}
+
+void Inventory::setHotdogCount(int count)
+{
+    this->hotdogCount = count;
+}
+
+int Inventory::getHotdogCount()
+{
+    return this->hotdogCount;
+}
+
+void Inventory::setChickenSandwichCount(int count)
+{
+    this->chickensandwichCount = count;
+}
+
+int Inventory::getChickenSandwichCount()
+{
+    return this->chickensandwichCount;
+}
+
+void Inventory::setChickenNuggetCount(int count)
+{
+    this->chickennuggetCount = count;
+}
+
+int Inventory::getChickenNuggetCount()
+{
+    return this->chickennuggetCount;
+}
+
+void Inventory::setSaladCount(int count)
+{
+    this->saladCount = count;
+}
+
+int Inventory::getSaladCount()
+{
+    return this->saladCount;
+}
+
+void Inventory::setFriesCount(int count)
+{
+    this->friesCount = count;
+}
+
+int Inventory::getFriesCount()
+{
+    return this->friesCount;
+}
+
+void Inventory::setSodaCount(int count)
+{
+    this->sodaCount = count;
+}
+
+int Inventory::getSodaCount()
+{
+    return this->sodaCount;
+}
+
+void Inventory::setTeaCount(int count)
+{
+    this->teaCount = count;
+}
+
+int Inventory::getTeaCount()
+{
+    return this->teaCount;
+}
+
+void Inventory::setMilkshakeCount(int count)
+{
+    this->shakeCount = count;
+}
+
+int Inventory::getMilkshakeCount()
+{
+    return this->shakeCount;
+}

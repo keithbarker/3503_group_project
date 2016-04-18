@@ -19,6 +19,35 @@ public:
     Inventory();
     void updateInventory();
     void addCount(std::string countName);
+
+    void setHamburgerCount(int count);
+    int getHamburgerCount();
+
+    void setHotdogCount(int count);
+    int getHotdogCount();
+
+    void setChickenSandwichCount(int count);
+    int getChickenSandwichCount();
+
+    void setChickenNuggetCount(int count);
+    int getChickenNuggetCount();
+
+    void setSaladCount(int count);
+    int getSaladCount();
+
+    void setFriesCount(int count);
+    int getFriesCount();
+
+    void setSodaCount(int count);
+    int getSodaCount();
+
+    void setTeaCount(int count);
+    int getTeaCount();
+
+    void setMilkshakeCount(int count);
+    int getMilkshakeCount();
+
+
 };
 
 
