@@ -28,7 +28,7 @@ void MainWindow::on_hamburger_button_clicked()
     // Add the hamburger item to the scroll box.
     Item *hamburger_item = new Item();
     hamburger_item->setId(new_order->getItemCount() + 1);
-    hamburger_item->setItemsLeft(99);
+    hamburger_item->setItemsLeft(hamburger_item->getItemsLeft() - 1);
     hamburger_item->setPrice(3.99);
     hamburger_item->setName(string("Hamburger"));
 
@@ -69,7 +69,7 @@ void MainWindow::on_hotdog_button_clicked()
     // Add the hotdog item to the scroll box.
     Item *hotdog_item = new Item();
     hotdog_item->setId(new_order->getItemCount() + 1);
-    hotdog_item->setItemsLeft(99);
+    hotdog_item->setItemsLeft(hotdog_item->getItemsLeft() - 1);
     hotdog_item->setPrice(2.99);
     hotdog_item->setName(string("Hotdog"));
 
@@ -105,7 +105,7 @@ void MainWindow::on_chick_sand_button_clicked()
     // Add the chicken sandwich item to the scroll box.
     Item *chick_sand_item = new Item();
     chick_sand_item->setId(new_order->getItemCount() + 1);
-    chick_sand_item->setItemsLeft(99);
+    chick_sand_item->setItemsLeft(chick_sand_item->getItemsLeft() - 1);
     chick_sand_item->setPrice(3.49);
     chick_sand_item->setName(string("Chicken Sandwich"));
 
@@ -140,7 +140,7 @@ void MainWindow::on_chick_nug_button_clicked()
     // Add the chicken nugget item to the scroll box.
     Item *chick_nug_item = new Item();
     chick_nug_item->setId(new_order->getItemCount() + 1);
-    chick_nug_item->setItemsLeft(99);
+    chick_nug_item->setItemsLeft(chick_nug_item->getItemsLeft() - 1);
     chick_nug_item->setPrice(1.99);
     chick_nug_item->setName(string("Chicken Nuggets"));
 
@@ -168,7 +168,7 @@ void MainWindow::on_salad_button_clicked()
     /// Add the salad item to the scroll box.
     Item *salad_item = new Item();
     salad_item->setId(new_order->getItemCount() + 1);
-    salad_item->setItemsLeft(99);
+    salad_item->setItemsLeft(salad_item->getItemsLeft() - 1);
     salad_item->setPrice(3.99);
     salad_item->setName(string("Salad"));
 
@@ -205,7 +205,7 @@ void MainWindow::on_fries_button_clicked()
     // Add the fries item to the scroll box.
     Item *fries_item = new Item();
     fries_item->setId(new_order->getItemCount() + 1);
-    fries_item->setItemsLeft(99);
+    fries_item->setItemsLeft(fries_item->getItemsLeft() - 1);
     fries_item->setPrice(1.99);
     fries_item->setName(string("Fries"));
 
@@ -232,7 +232,7 @@ void MainWindow::on_soda_button_clicked()
     // Add the soda item to the scroll box.
     Item *soda_item = new Item();
     soda_item->setId(new_order->getItemCount() + 1);
-    soda_item->setItemsLeft(99);
+    soda_item->setItemsLeft(soda_item->getItemsLeft() - 1);
     soda_item->setPrice(1.49);
     soda_item->setName(string("Soda"));
 
@@ -262,7 +262,7 @@ void MainWindow::on_tea_button_clicked()
     // Add the tea item to the scroll box.
     Item *tea_item = new Item();
     tea_item->setId(new_order->getItemCount() + 1);
-    tea_item->setItemsLeft(99);
+    tea_item->setItemsLeft(tea_item->getItemsLeft() - 1);
     tea_item->setPrice(0.99);
     tea_item->setName(string("Tea"));
 
@@ -290,7 +290,7 @@ void MainWindow::on_milk_shake_button_clicked()
     // Add the milkshake item to the scroll box.
     Item *milkshake_item = new Item();
     milkshake_item->setId(new_order->getItemCount() + 1);
-    milkshake_item->setItemsLeft(99);
+    milkshake_item->setItemsLeft(milkshake_item->getItemsLeft() - 1);
     milkshake_item->setPrice(3.99);
     milkshake_item->setName(string("Milkshake"));
 

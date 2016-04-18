@@ -28,7 +28,7 @@ selection-background-color: rgb(66, 111, 153);
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>0</x>
       <y>0</y>
       <width>1200</width>
       <height>831</height>
