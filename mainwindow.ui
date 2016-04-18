@@ -28,10 +28,10 @@ selection-background-color: rgb(66, 111, 153);
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>100</x>
       <y>0</y>
       <width>1200</width>
-      <height>770</height>
+      <height>831</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -793,6 +793,296 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="text">
        <string>Done</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hamburger_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>190</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Hamburgers</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hotdog_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>190</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Hot Dogs</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chick_sand_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>190</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Chicken
+Sandwiches</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chick_nug_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>190</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Chicken
+Nuggets</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="salad_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>360</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Salads</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fries_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>360</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Fries</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tea_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>540</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Tea</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="milkshake_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>540</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Milk Shakes</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="soft_drink_inv_button">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>540</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Soft Drinks</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_2">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>320</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_3">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>320</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_4">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>320</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>320</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_5">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>490</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_6">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>490</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_7">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>670</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_8">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>670</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inv_label_9">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>670</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>99</string>
       </property>
      </widget>
     </widget>

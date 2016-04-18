@@ -32,6 +32,7 @@ void MainWindow::on_hamburger_button_clicked()
     hamburger_item->setPrice(3.99);
     hamburger_item->setName(string("Hamburger"));
 
+
     // Set the allowed toppings.
     vector<string> extras {"Bacon","Cheese","Lettuce","Tomatoes","Pickles","Onions","Ketchup","Mustard","Barbeque","Mayo"};
     hamburger_item->addAllowedExtras(extras);
@@ -498,9 +499,11 @@ void MainWindow::on_receipt_done_button_clicked()
 
 void MainWindow::on_password_enter_button_clicked()
 {
-    if(ui->password_box->text() == "admin"){
+    if(ui->password_box->text() == "admin")
+    {
         ui->stackedWidget->setCurrentIndex(5);
-         ui->password_box->setText("");
+
+        ui->password_box->setText("");
     }
 }
 
