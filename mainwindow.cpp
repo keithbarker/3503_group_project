@@ -519,3 +519,89 @@ void MainWindow::on_password_box_editingFinished()
         ui->password_box->setText("");
     }
 }
+
+void MainWindow::on_hamburger_inv_button_clicked()
+{
+    ui->manage_label->setText("How many hamburgers would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_hotdog_inv_button_clicked()
+{
+    ui->manage_label->setText("How many hotdogs would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_chick_sand_inv_button_clicked()
+{
+    ui->manage_label->setText("How many chicken sandwiches would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_chick_nug_inv_button_clicked()
+{
+    ui->manage_label->setText("How many chicken nuggets would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_salad_inv_button_clicked()
+{
+    ui->manage_label->setText("How many salads would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_fries_inv_button_clicked()
+{
+    ui->manage_label->setText("How many fries would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_soft_drink_inv_button_clicked()
+{
+    ui->manage_label->setText("How many soft drinks would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_tea_inv_button_clicked()
+{
+    ui->manage_label->setText("How much tea would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_milkshake_inv_button_clicked()
+{
+    ui->manage_label->setText("How many milkshakes would you like to add to the inventory?");
+
+    ui->stackedWidget->setCurrentIndex(6);
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_manage_back_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}

@@ -69,6 +69,26 @@ private slots:
 
     void on_password_box_editingFinished();
 
+    void on_hamburger_inv_button_clicked();
+
+    void on_manage_back_button_clicked();
+
+    void on_hotdog_inv_button_clicked();
+
+    void on_chick_sand_inv_button_clicked();
+
+    void on_chick_nug_inv_button_clicked();
+
+    void on_salad_inv_button_clicked();
+
+    void on_fries_inv_button_clicked();
+
+    void on_soft_drink_inv_button_clicked();
+
+    void on_tea_inv_button_clicked();
+
+    void on_milkshake_inv_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     Order *new_order;

@@ -35,7 +35,7 @@ selection-background-color: rgb(66, 111, 153);
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="main_page">
      <widget class="QPushButton" name="chick_nug_button">
@@ -452,6 +452,9 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
         <width>241</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
@@ -1083,6 +1086,78 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="text">
        <string>99</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="manage_page">
+     <widget class="QLabel" name="manage_label">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>40</y>
+        <width>761</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="manage_box">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>420</y>
+        <width>241</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="inv_enter_button">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>420</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+        max-width: 150px;
+        height: 150px;
+        selection-color: rgb(255, 170, 127);
+        font: 16pt 'MS Shell Dlg 2';
+        color: rgb(255, 255, 255);
+        selection-background-color: rgb(66, 111, 153);</string>
+      </property>
+      <property name="text">
+       <string>Enter</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="manage_back_button">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>50</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(87, 137, 183);
+color: rgb(255, 255, 255);
+alternate-background-color: rgb(87, 137, 183);
+font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
       </property>
      </widget>
     </widget>
