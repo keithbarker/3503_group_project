@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QString>
 #include "Order.h"
+#include "inventory.h"
 #include <QLineEdit>
 
 using namespace std;
@@ -92,6 +93,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Order *new_order;
+    Inventory *new_Inventory;
 };
 
 #endif // MAINWINDOW_H

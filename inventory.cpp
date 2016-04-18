@@ -1,4 +1,8 @@
 #include "inventory.h"
+#include "Item.h"
+#include <vector>
+
+using namespace std;
 
 Inventory::Inventory(){
      hamburgerCount = 100;
@@ -17,9 +21,9 @@ void Inventory::addCount(std::string countName){
 
 }
 
-void Inventory::updateInventory(){  //call only after order completed
+void Inventory::updateInventory(vector<Item*> *itemArray){  //call only after order completed
 
-     for (auto const& item : itemArray){
+     for (auto item : *itemArray){
          if(item->getName() == "Hamburger"){
             --hamburgerCount;
          }

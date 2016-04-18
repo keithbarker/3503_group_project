@@ -4,11 +4,11 @@
 #include "Item.h"
 #include <vector>
 #include <sstream>
+#include <iostream>
 #include <string>
 #include "inventory.h"
 
 using namespace std;
-Inventory new_Inventory();
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->scroll_layout->setAlignment(Qt::AlignTop);
     new_order = new Order();
+    new_Inventory = new Inventory();
     connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_list()));
 }
 
@@ -33,7 +34,6 @@ void MainWindow::on_hamburger_button_clicked()
     hamburger_item->setItemsLeft(hamburger_item->getItemsLeft() - 1);
     hamburger_item->setPrice(3.99);
     hamburger_item->setName(string("Hamburger"));
-
 
     // Set the allowed toppings.
     vector<string> extras {"Bacon","Cheese","Lettuce","Tomatoes","Pickles","Onions","Ketchup","Mustard","Barbeque","Mayo"};
@@ -387,7 +387,12 @@ void MainWindow::button_factory(string name, int position) {
     set_button_style(topping_button);
     connect(topping_button, &QPushButton::toggled, [=] {
         Item *item = new_order->itemArray->back();
-        item->addExtra(name);
+        if (topping_button->isChecked()) {
+            item->addExtra(name);
+        } else {
+            item->removeExtra(name);
+        }
+        emit new_order->itemsChanged();
     });
 
     switch(position) {
@@ -457,7 +462,7 @@ void MainWindow::update_list() {
         str_price = "$" + str_price;
 
         QPushButton *remove_button = new QPushButton("X");
-        remove_button->setStyleSheet("color:white;background-color:red;max-width: 20px");
+        remove_button->setStyleSheet("color:white;background-color:rgb(195,50,46);max-width: 20px");
         QLabel *item = new QLabel(QString::fromStdString((*it)->getName()));
         QLabel *price = new QLabel(QString::fromStdString(str_price));
         QHBoxLayout *item_line = new QHBoxLayout();
@@ -494,7 +499,7 @@ void MainWindow::on_yes_confirm_button_clicked()
 
 void MainWindow::on_receipt_done_button_clicked()
 {
-    new_Inventory->updateInventory();
+    new_Inventory->updateInventory(new_order->itemArray);
     new_order->clearOrder();    //clears itemarray and totals
     clear_items(ui->scroll_layout); //empty list
     ui->stackedWidget->setCurrentIndex(0);

@@ -1,4 +1,7 @@
 #include "Item.h"
+#include <iostream>
+
+using namespace std;
 
 Item::Item() //default constructor (set values using setters)
 {
@@ -109,7 +112,7 @@ int Item::getQuantity() //get quantity
 
 void Item::addExtra(string extra)
 {
-    if (find(allowed_extras.begin(), allowed_extras.end(), extra) != allowed_extras.end())
+    if (find(requested_extras.begin(), requested_extras.end(), extra) == requested_extras.end())
     {
         this->requested_extras.push_back(extra);
     }
@@ -122,6 +125,8 @@ string Item::getExtras()
         extras += s;
         extras += ", ";
     }
+    extras.pop_back();
+    extras.pop_back();
     return extras;
 }
 

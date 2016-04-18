@@ -2,6 +2,10 @@
 #define INVENTORY_H
 
 #include "Order.h"
+#include "Item.h"
+#include <vector>
+
+using namespace std;
 
 
 class Inventory : public Order{
@@ -17,7 +21,7 @@ class Inventory : public Order{
 
 public:
     Inventory();
-    void updateInventory();
+    void updateInventory(vector<Item*> *itemArray);
     void addCount(std::string countName);
 
     void setHamburgerCount(int count);
