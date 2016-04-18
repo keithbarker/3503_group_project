@@ -17,12 +17,14 @@ SOURCES += main.cpp\
     Drinks.cpp \
     Food.cpp \
     Item.cpp \
-    Order.cpp
+    Order.cpp \
+    inventory.cpp
 
 HEADERS  += mainwindow.h \
     Drinks.h \
     Item.h \
     Order.h \
-    Food.h
+    Food.h \
+    inventory.h
 
 FORMS    += mainwindow.ui
