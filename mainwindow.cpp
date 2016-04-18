@@ -5,8 +5,10 @@
 #include <vector>
 #include <sstream>
 #include <string>
+#include "inventory.h"
 
 using namespace std;
+Inventory new_Inventory();
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -492,6 +494,7 @@ void MainWindow::on_yes_confirm_button_clicked()
 
 void MainWindow::on_receipt_done_button_clicked()
 {
+    new_Inventory.updateInventory();
     new_order->clearOrder();    //clears itemarray and totals
     clear_items(ui->scroll_layout); //empty list
     ui->stackedWidget->setCurrentIndex(0);
