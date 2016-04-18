@@ -82,3 +82,9 @@ int Order::getItemCount() {
     }
     return 0;
 }
+
+ void Order::clearOrder(){
+     itemArray->clear();
+     this->subtotal = 0;
+     this->total = 0;
+ }

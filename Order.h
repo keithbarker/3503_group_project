@@ -33,6 +33,8 @@ public:
 	void findTotal();	//calculate total from tax and subtotal
     int getItemCount();
 
+    void clearOrder();
+
 public slots:
 
 signals:
