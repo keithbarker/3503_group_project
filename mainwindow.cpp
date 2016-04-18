@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include "inventory.h"
+#include <ctime>
 
 using namespace std;
 
@@ -15,7 +16,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->scroll_layout->setAlignment(Qt::AlignTop);
     new_order = new Order();
     new_Inventory = new Inventory();
     connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_list()));
@@ -358,7 +358,6 @@ void MainWindow::clear_items(QLayout *layout)
     {
         if (item->layout()) {
             clear_items(item->layout());
-            //delete item->layout();
         }
         if (item->widget())
         {
@@ -445,10 +444,14 @@ void MainWindow::button_factory(string name, int position) {
 }
 
 void MainWindow::update_list() {
-    clear_items(ui->scroll_layout);
+    if (ui->scrollAreaWidgetContents->layout())
+        clear_items(ui->scrollAreaWidgetContents->layout());
+        delete ui->scrollAreaWidgetContents->layout();
 
     vector<Item*> *items = new_order->itemArray;
     vector<Item*>::iterator it;
+    QVBoxLayout* scroll_layout = new QVBoxLayout();
+    scroll_layout->setAlignment(Qt::AlignTop);
     int i = 0;
     for (it = items->begin(); it != items->end(); it++, i++) {
         std::ostringstream strs;
@@ -464,24 +467,27 @@ void MainWindow::update_list() {
         QPushButton *remove_button = new QPushButton("X");
         remove_button->setStyleSheet("color:white;background-color:rgb(195,50,46);max-width: 20px");
         QLabel *item = new QLabel(QString::fromStdString((*it)->getName()));
+        item->setStyleSheet("font: 75 14pt 'MS Shell Dlg 2';");
         QLabel *price = new QLabel(QString::fromStdString(str_price));
+        price->setStyleSheet("font: 75 14pt 'MS Shell Dlg 2';");
         QHBoxLayout *item_line = new QHBoxLayout();
         item_line->addWidget(remove_button);
         item_line->addWidget(item);
         item_line->addWidget(price);
-        ui->scroll_layout->addLayout(item_line);
+        scroll_layout->addLayout(item_line);
 
         //trying to put extras in cart on main page
         QLabel *toppings = new QLabel(QString::fromStdString((*it)->getExtras()));
         QHBoxLayout *item_line2 = new QHBoxLayout();
         item_line2->addWidget(toppings);
-        ui->scroll_layout->addLayout(item_line2);
+        scroll_layout->addLayout(item_line2);
 
 
         // Set the function to be called when the remove button is clicked.
         // In this case I'm using a lambda and using an inline function.
         connect(remove_button, &QPushButton::clicked, [=] {new_order->removeItem(i);});
     }
+    ui->scrollAreaWidgetContents->setLayout(scroll_layout);
 }
 
 
@@ -492,8 +498,74 @@ void MainWindow::on_no_confirmbutton_clicked()
 
 void MainWindow::on_yes_confirm_button_clicked()
 {
-   // new_order->removeItem(0); //caused problems
-   ui->stackedWidget->setCurrentIndex(4);
+    // Clear the scroll area.
+    if (ui->scrollAreaWidgetContents_2->layout())
+        clear_items(ui->scrollAreaWidgetContents_2->layout());
+        delete ui->scrollAreaWidgetContents_2->layout();
+
+    // Create the vertical layout for the inside of the scroll.
+    QVBoxLayout* receipt_layout = new QVBoxLayout();
+    receipt_layout->setAlignment(Qt::AlignTop);
+
+    // Print out a receipt header.
+    QHBoxLayout *logo_line = new QHBoxLayout();
+    QLabel *logo = new QLabel(QString::fromStdString("XYZ Burgers"));
+    logo->setStyleSheet("font: 75 24pt 'MS Shell Dlg 2';");
+    logo_line->addWidget(logo);
+
+    QHBoxLayout *thanks_line = new QHBoxLayout();
+    QLabel *thanks = new QLabel(QString::fromStdString("Thank you for your order!"));
+    thanks->setStyleSheet("font: 50 12pt 'MS Shell Dlg 2';");
+    thanks_line->addWidget(thanks);
+
+    QHBoxLayout *time_line = new QHBoxLayout();
+    const time_t ctt = time(0);
+    string time_str = "Order Placed: ";
+    time_str += asctime(localtime(&ctt));
+    QLabel *time = new QLabel(QString::fromStdString(time_str));
+    time->setStyleSheet("font: 50 12pt 'MS Shell Dlg 2';");
+    time_line->addWidget(time);
+
+    receipt_layout->addLayout(logo_line);
+    receipt_layout->addLayout(thanks_line);
+    receipt_layout->addLayout(time_line);
+
+    // Print out the items.
+    vector<Item*> *items = new_order->itemArray;
+    vector<Item*>::iterator it;
+    int i = 0;
+    for (it = items->begin(); it != items->end(); it++, i++) {
+        std::ostringstream strs;
+        strs << (*it)->getPrice();
+        string str_price = strs.str();
+
+        if (str_price.length() == 3)
+            str_price += "0";
+        else if (str_price.length() == 2)
+            str_price = "0" + str_price;
+        str_price = "$" + str_price;
+
+        QLabel *item = new QLabel(QString::fromStdString((*it)->getName()));
+        item->setStyleSheet("font: 75 14pt 'MS Shell Dlg 2';");
+        QLabel *price = new QLabel(QString::fromStdString(str_price));
+        price->setStyleSheet("font: 75 14pt 'MS Shell Dlg 2';");
+        QHBoxLayout *item_line = new QHBoxLayout();
+        item_line->addWidget(item);
+        item_line->addWidget(price);
+        receipt_layout->addLayout(item_line);
+
+        //trying to put extras in cart on main page
+        QLabel *toppings = new QLabel(QString::fromStdString((*it)->getExtras()));
+        QHBoxLayout *item_line2 = new QHBoxLayout();
+        item_line2->addWidget(toppings);
+        receipt_layout->addLayout(item_line2);
+    }
+
+    // Add the layout to the scroll area.
+    ui->scrollAreaWidgetContents_2->setLayout(receipt_layout);
+
+    // Navigate to the receipt page.
+    ui->stackedWidget->setCurrentIndex(4);
 }
 
 
@@ -501,7 +573,6 @@ void MainWindow::on_receipt_done_button_clicked()
 {
     new_Inventory->updateInventory(new_order->itemArray);
     new_order->clearOrder();    //clears itemarray and totals
-    clear_items(ui->scroll_layout); //empty list
     ui->stackedWidget->setCurrentIndex(0);
 }
 

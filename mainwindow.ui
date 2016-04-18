@@ -313,30 +313,6 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
        <property name="styleSheet">
         <string notr="true"/>
        </property>
-       <widget class="QWidget" name="verticalLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>391</width>
-          <height>581</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="scroll_layout">
-         <property name="leftMargin">
-          <number>10</number>
-         </property>
-         <property name="topMargin">
-          <number>10</number>
-         </property>
-         <property name="rightMargin">
-          <number>10</number>
-         </property>
-         <property name="bottomMargin">
-          <number>10</number>
-         </property>
-        </layout>
-       </widget>
       </widget>
      </widget>
     </widget>
@@ -690,9 +666,9 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
       <property name="geometry">
        <rect>
         <x>350</x>
-        <y>140</y>
+        <y>100</y>
         <width>441</width>
-        <height>521</height>
+        <height>621</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -707,27 +683,16 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
          <x>0</x>
          <y>0</y>
          <width>439</width>
-         <height>519</height>
+         <height>619</height>
         </rect>
        </property>
-       <widget class="QWidget" name="verticalLayoutWidget_2">
-        <property name="geometry">
-         <rect>
-          <x>-1</x>
-          <y>-1</y>
-          <width>441</width>
-          <height>521</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="receipt_layout"/>
-       </widget>
       </widget>
      </widget>
      <widget class="QLabel" name="receipt_label">
       <property name="geometry">
        <rect>
         <x>400</x>
-        <y>60</y>
+        <y>30</y>
         <width>381</width>
         <height>41</height>
        </rect>

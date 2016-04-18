@@ -87,4 +87,5 @@ int Order::getItemCount() {
      itemArray->clear();
      this->subtotal = 0;
      this->total = 0;
+    emit itemsChanged();
  }
