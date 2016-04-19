@@ -92,10 +92,15 @@ private slots:
 
     void on_milkshake_inv_button_clicked();
 
+    void on_manage_box_editingFinished();
+
+    void on_inv_enter_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     Order *new_order;
     Inventory *new_Inventory;
+    int inv_item;
 };
 
 #endif // MAINWINDOW_H

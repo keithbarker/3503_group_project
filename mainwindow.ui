@@ -1117,19 +1117,6 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
        <string>99</string>
       </property>
      </widget>
-     <widget class="QCommandLinkButton" name="commandLinkButton">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>250</y>
-        <width>172</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CommandLinkButton</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="manage_page">
      <widget class="QLabel" name="manage_label">

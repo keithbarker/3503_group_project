@@ -3,6 +3,7 @@
 #include "Item.h"
 #include <vector>
 #include <QObject>
+#include <math.h>
 using namespace std;
 
 class Order : public QObject

@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) :
     new_Inventory = new Inventory();
     connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_list()));
     connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_totals()));
+
+    int inv_item = 0;
 }
 
 MainWindow::~MainWindow()
@@ -610,6 +612,16 @@ void MainWindow::on_password_enter_button_clicked()
     {
         ui->stackedWidget->setCurrentIndex(5);
 
+        ui->inv_label->setText(QString::number(new_Inventory->getHamburgerCount()));
+        ui->inv_label_2->setText(QString::number(new_Inventory->getHotdogCount()));
+        ui->inv_label_3->setText(QString::number(new_Inventory->getChickenSandwichCount()));
+        ui->inv_label_4->setText(QString::number(new_Inventory->getChickenNuggetCount()));
+        ui->inv_label_5->setText(QString::number(new_Inventory->getSaladCount()));
+        ui->inv_label_6->setText(QString::number(new_Inventory->getFriesCount()));
+        ui->inv_label_7->setText(QString::number(new_Inventory->getSodaCount()));
+        ui->inv_label_8->setText(QString::number(new_Inventory->getTeaCount()));
+        ui->inv_label_9->setText(QString::number(new_Inventory->getMilkshakeCount()));
+
         ui->password_box->setText("");
     }
 }
@@ -623,6 +635,19 @@ void MainWindow::on_password_box_editingFinished()
 {
     if(ui->password_box->text() == "admin"){
         ui->stackedWidget->setCurrentIndex(5);
+
+        ui->inv_label->setText(QString::number(new_Inventory->getHamburgerCount()));
+
+        ui->inv_label->setText(QString::number(new_Inventory->getHamburgerCount()));
+        ui->inv_label_2->setText(QString::number(new_Inventory->getHotdogCount()));
+        ui->inv_label_3->setText(QString::number(new_Inventory->getChickenSandwichCount()));
+        ui->inv_label_4->setText(QString::number(new_Inventory->getChickenNuggetCount()));
+        ui->inv_label_5->setText(QString::number(new_Inventory->getSaladCount()));
+        ui->inv_label_6->setText(QString::number(new_Inventory->getFriesCount()));
+        ui->inv_label_7->setText(QString::number(new_Inventory->getSodaCount()));
+        ui->inv_label_8->setText(QString::number(new_Inventory->getTeaCount()));
+        ui->inv_label_9->setText(QString::number(new_Inventory->getMilkshakeCount()));
+
         ui->password_box->setText("");
     }
 }
@@ -633,6 +658,8 @@ void MainWindow::on_hamburger_inv_button_clicked()
 
     ui->stackedWidget->setCurrentIndex(6);
 
+    this->inv_item = 1;
+
     ui->manage_box->setText("");
 }
 
@@ -641,6 +668,8 @@ void MainWindow::on_hotdog_inv_button_clicked()
     ui->manage_label->setText("How many hotdogs would you like to add to the inventory?");
 
     ui->stackedWidget->setCurrentIndex(6);
+
+    inv_item = 2;
 
     ui->manage_box->setText("");
 }
@@ -651,6 +680,8 @@ void MainWindow::on_chick_sand_inv_button_clicked()
 
     ui->stackedWidget->setCurrentIndex(6);
 
+    inv_item = 3;
+
     ui->manage_box->setText("");
 }
 
@@ -659,6 +690,8 @@ void MainWindow::on_chick_nug_inv_button_clicked()
     ui->manage_label->setText("How many chicken nuggets would you like to add to the inventory?");
 
     ui->stackedWidget->setCurrentIndex(6);
+
+    inv_item = 4;
 
     ui->manage_box->setText("");
 }
@@ -669,6 +702,8 @@ void MainWindow::on_salad_inv_button_clicked()
 
     ui->stackedWidget->setCurrentIndex(6);
 
+    inv_item = 5;
+
     ui->manage_box->setText("");
 }
 
@@ -677,6 +712,8 @@ void MainWindow::on_fries_inv_button_clicked()
     ui->manage_label->setText("How many fries would you like to add to the inventory?");
 
     ui->stackedWidget->setCurrentIndex(6);
+
+    inv_item = 6;
 
     ui->manage_box->setText("");
 }
@@ -687,6 +724,8 @@ void MainWindow::on_soft_drink_inv_button_clicked()
 
     ui->stackedWidget->setCurrentIndex(6);
 
+    inv_item = 7;
+
     ui->manage_box->setText("");
 }
 
@@ -695,6 +734,8 @@ void MainWindow::on_tea_inv_button_clicked()
     ui->manage_label->setText("How much tea would you like to add to the inventory?");
 
     ui->stackedWidget->setCurrentIndex(6);
+
+    inv_item = 8;
 
     ui->manage_box->setText("");
 }
@@ -705,10 +746,126 @@ void MainWindow::on_milkshake_inv_button_clicked()
 
     ui->stackedWidget->setCurrentIndex(6);
 
+    inv_item = 9;
+
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_manage_back_button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_manage_box_editingFinished()
+{
+    switch(this->inv_item)
+
+    {
+    case 1:
+        new_Inventory->setHamburgerCount(new_Inventory->getHamburgerCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 2:
+        new_Inventory->setHotdogCount(new_Inventory->getHotdogCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 3:
+        new_Inventory->setChickenSandwichCount(new_Inventory->getChickenSandwichCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 4:
+        new_Inventory->setChickenNuggetCount(new_Inventory->getChickenNuggetCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 5:
+        new_Inventory->setSaladCount(new_Inventory->getSaladCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 6:
+        new_Inventory->setFriesCount(new_Inventory->getFriesCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 7:
+        new_Inventory->setSodaCount(new_Inventory->getSodaCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 8:
+        new_Inventory->setTeaCount(new_Inventory->getTeaCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+
+    case 9:
+        new_Inventory->setMilkshakeCount(new_Inventory->getMilkshakeCount() + (ui->manage_box->text().toInt() / 2));
+        break;
+    }
+
+    ui->stackedWidget->setCurrentIndex(5);
+
+    ui->inv_label->setText(QString::number(new_Inventory->getHamburgerCount()));
+    ui->inv_label_2->setText(QString::number(new_Inventory->getHotdogCount()));
+    ui->inv_label_3->setText(QString::number(new_Inventory->getChickenSandwichCount()));
+    ui->inv_label_4->setText(QString::number(new_Inventory->getChickenNuggetCount()));
+    ui->inv_label_5->setText(QString::number(new_Inventory->getSaladCount()));
+    ui->inv_label_6->setText(QString::number(new_Inventory->getFriesCount()));
+    ui->inv_label_7->setText(QString::number(new_Inventory->getSodaCount()));
+    ui->inv_label_8->setText(QString::number(new_Inventory->getTeaCount()));
+    ui->inv_label_9->setText(QString::number(new_Inventory->getMilkshakeCount()));
+
+    ui->manage_box->setText("");
+}
+
+void MainWindow::on_inv_enter_button_clicked()
+{
+    switch(this->inv_item)
+
+    {
+    case 1:
+        new_Inventory->setHamburgerCount(new_Inventory->getHamburgerCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 2:
+        new_Inventory->setHotdogCount(new_Inventory->getHotdogCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 3:
+        new_Inventory->setChickenSandwichCount(new_Inventory->getChickenSandwichCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 4:
+        new_Inventory->setChickenNuggetCount(new_Inventory->getChickenNuggetCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 5:
+        new_Inventory->setSaladCount(new_Inventory->getSaladCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 6:
+        new_Inventory->setFriesCount(new_Inventory->getFriesCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 7:
+        new_Inventory->setSodaCount(new_Inventory->getSodaCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 8:
+        new_Inventory->setTeaCount(new_Inventory->getTeaCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+
+    case 9:
+        new_Inventory->setMilkshakeCount(new_Inventory->getMilkshakeCount() + (ui->manage_box->text().toInt() * 2));
+        break;
+    }
+
+    ui->stackedWidget->setCurrentIndex(5);
+
+    ui->inv_label->setText(QString::number(new_Inventory->getHamburgerCount()));
+    ui->inv_label_2->setText(QString::number(new_Inventory->getHotdogCount()));
+    ui->inv_label_3->setText(QString::number(new_Inventory->getChickenSandwichCount()));
+    ui->inv_label_4->setText(QString::number(new_Inventory->getChickenNuggetCount()));
+    ui->inv_label_5->setText(QString::number(new_Inventory->getSaladCount()));
+    ui->inv_label_6->setText(QString::number(new_Inventory->getFriesCount()));
+    ui->inv_label_7->setText(QString::number(new_Inventory->getSodaCount()));
+    ui->inv_label_8->setText(QString::number(new_Inventory->getTeaCount()));
+    ui->inv_label_9->setText(QString::number(new_Inventory->getMilkshakeCount()));
+
+    ui->manage_box->setText("");
 }
