@@ -762,7 +762,7 @@ void MainWindow::on_manage_box_editingFinished()
 
     {
     case 1:
-        new_Inventory->setHamburgerCount(new_Inventory->getHamburgerCount() + (ui->manage_box->text().toInt() / 2));
+        new_Inventory->setHamburgerCount(new_Inventory->getHamburgerCount() + ceil((double)(ui->manage_box->text().toInt() / 2)));
         break;
 
     case 2:
@@ -819,39 +819,39 @@ void MainWindow::on_inv_enter_button_clicked()
 
     {
     case 1:
-        new_Inventory->setHamburgerCount(new_Inventory->getHamburgerCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setHamburgerCount(new_Inventory->getHamburgerCount() + ui->manage_box->text().toInt());
         break;
 
     case 2:
-        new_Inventory->setHotdogCount(new_Inventory->getHotdogCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setHotdogCount(new_Inventory->getHotdogCount() + ui->manage_box->text().toInt());
         break;
 
     case 3:
-        new_Inventory->setChickenSandwichCount(new_Inventory->getChickenSandwichCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setChickenSandwichCount(new_Inventory->getChickenSandwichCount() + ui->manage_box->text().toInt());
         break;
 
     case 4:
-        new_Inventory->setChickenNuggetCount(new_Inventory->getChickenNuggetCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setChickenNuggetCount(new_Inventory->getChickenNuggetCount() + ui->manage_box->text().toInt());
         break;
 
     case 5:
-        new_Inventory->setSaladCount(new_Inventory->getSaladCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setSaladCount(new_Inventory->getSaladCount() + ui->manage_box->text().toInt());
         break;
 
     case 6:
-        new_Inventory->setFriesCount(new_Inventory->getFriesCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setFriesCount(new_Inventory->getFriesCount() + ui->manage_box->text().toInt());
         break;
 
     case 7:
-        new_Inventory->setSodaCount(new_Inventory->getSodaCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setSodaCount(new_Inventory->getSodaCount() + ui->manage_box->text().toInt());
         break;
 
     case 8:
-        new_Inventory->setTeaCount(new_Inventory->getTeaCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setTeaCount(new_Inventory->getTeaCount() + ui->manage_box->text().toInt());
         break;
 
     case 9:
-        new_Inventory->setMilkshakeCount(new_Inventory->getMilkshakeCount() + (ui->manage_box->text().toInt() * 2));
+        new_Inventory->setMilkshakeCount(new_Inventory->getMilkshakeCount() + ui->manage_box->text().toInt());
         break;
     }
 
