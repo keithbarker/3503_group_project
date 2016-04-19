@@ -14,17 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    Drinks.cpp \
-    Food.cpp \
     Item.cpp \
     Order.cpp \
     inventory.cpp
 
 HEADERS  += mainwindow.h \
-    Drinks.h \
     Item.h \
     Order.h \
-    Food.h \
     inventory.h
 
 FORMS    += mainwindow.ui

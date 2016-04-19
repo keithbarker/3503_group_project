@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "order.h"
+#include "Order.h"
 #include "Item.h"
 #include <vector>
 #include <sstream>

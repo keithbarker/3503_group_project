@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "Item.h"
-#include "Drinks.h"
 #include "Order.h"
-#include "Food.h"
 #include <QApplication>
 #include "inventory.h"
 
