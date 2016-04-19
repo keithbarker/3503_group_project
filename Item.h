@@ -5,7 +5,7 @@
 using namespace std;
 
 
-class Item : public QObject
+class Item : public QObject //stores information for individual food and drink items
 {
 
 private:
@@ -59,5 +59,5 @@ public:
     string getExtras();
     void removeExtra(string extra);
 
-    void addAllowedExtras(vector<string> extras);
+    void addAllowedExtras(vector<string> extras);   //initializes vector with allowed toppings for each type of food item
 };

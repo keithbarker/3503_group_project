@@ -8,7 +8,7 @@
 using namespace std;
 
 
-class Inventory : public Order{
+class Inventory : public Order{ //stores counters for amount of food and drink items left in inventory
     int hamburgerCount;
     int hotdogCount;
     int chickensandwichCount;
@@ -21,7 +21,7 @@ class Inventory : public Order{
 
 public:
     Inventory();
-    void updateInventory(vector<Item*> *itemArray);
+    void updateInventory(vector<Item*> *itemArray); //called when clicking new order on receipt page (updates all counters with
     void addCount(std::string countName);
 
     void setHamburgerCount(int count);
