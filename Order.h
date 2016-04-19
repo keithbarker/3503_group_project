@@ -6,10 +6,10 @@
 #include <math.h>
 using namespace std;
 
-class Order : public QObject
+class Order : public QObject    //order class stores total and items added to order(called immediately on program startup)
 {
     Q_OBJECT
-	const double tax = 0.06;
+    const double tax = 0.06;    //total, tax, and subtotal calculated after item is added each time
 	double subtotal;
 	double total;
 
@@ -34,7 +34,7 @@ public:
 	void findTotal();	//calculate total from tax and subtotal
     int getItemCount();
 
-    void clearOrder();
+    void clearOrder();  //function called when at receipt page and ready to start new order
 
 public slots:
 
