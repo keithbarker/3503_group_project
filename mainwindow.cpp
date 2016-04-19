@@ -391,8 +391,22 @@ void MainWindow::button_factory(string name, int position) {
         Item *item = new_order->itemArray->back();
         if (topping_button->isChecked()) {
             item->addExtra(name);
+            if (name == "Bacon") {
+                item->setPrice(item->getPrice() + 0.75);
+            } else if (name == "Cheese") {
+                item->setPrice(item->getPrice() + 0.50);
+            } else if (name == "Chili") {
+                item->setPrice(item->getPrice() + 0.75);
+            }
         } else {
             item->removeExtra(name);
+            if (name == "Bacon") {
+                item->setPrice(item->getPrice() - 0.75);
+            } else if (name == "Cheese") {
+                item->setPrice(item->getPrice() - 0.50);
+            } else if (name == "Chili") {
+                item->setPrice(item->getPrice() - 0.75);
+            }
         }
         emit new_order->itemsChanged();
     });
