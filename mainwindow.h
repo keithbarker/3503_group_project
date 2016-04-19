@@ -92,7 +92,7 @@ private slots:
 
     void on_milkshake_inv_button_clicked();
 
-    void on_manage_box_editingFinished();
+    //void on_manage_box_editingFinished();
 
     void on_inv_enter_button_clicked();
 
