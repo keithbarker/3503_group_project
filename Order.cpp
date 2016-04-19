@@ -1,4 +1,5 @@
 #include "Order.h"
+#include <cmath>
 
 Order::Order(){
 	this->subtotal = 0;
@@ -15,7 +16,9 @@ void Order::setSubtotal(double subtotal) {
 }
 
 double Order::getSubtotal() {
-	return subtotal;
+    findSubtotal();
+    double fixed_sub = pow(10, 2);
+    return ((int)(subtotal*fixed_sub))/fixed_sub;
 }
 
 void Order::setTotal(double total) {
@@ -23,7 +26,9 @@ void Order::setTotal(double total) {
 }
 
 double Order::getTotal() {
-	return total;
+    findTotal();
+    double fixed_total = pow(10, 2);
+    return ((int)(total*fixed_total))/fixed_total;
 }
 
 void Order::printReceipt() {
@@ -51,29 +56,8 @@ void Order::findTotal() {
 }
 
 void Order::addItem(Item *toBeAdded){
-    // IMO no need to check if the item already exists.
-    // Let them add however many hamburgers they want and I don't think
-    // there is a way to add the same exact item twice.
     itemArray->push_back(toBeAdded);
     emit itemsChanged();
-//    bool alreadyInArray = false;
-//    //first determine if instance of object already in Item Array
-//    for(unsigned int i = 0; i < itemArray.size(); ++i){
-//        // if statement may have to be changed to accomodate for
-//        // items with different toppings but same food type being added
-//        // currently only checks if name of item to add is same
-//        // as one already in array
-//        if(itemArray[i].getName() == toBeAdded.getName()){
-//            //quantity of item in array increased
-//            alreadyInArray = true;
-//            itemArray[i].increaseQuantity();
-//            break;
-//        }
-//    }
-//    if(!alreadyInArray){    //if item not in array yet
-//        itemArray.push_back(toBeAdded);
-
-//    }
 }
 
 int Order::getItemCount() {
