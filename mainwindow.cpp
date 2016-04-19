@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     new_order = new Order();
     new_Inventory = new Inventory();
     connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_list()));
+    connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_totals()));
 }
 
 MainWindow::~MainWindow()
@@ -490,6 +491,10 @@ void MainWindow::update_list() {
     ui->scrollAreaWidgetContents->setLayout(scroll_layout);
 }
 
+void MainWindow::update_totals() {
+    ui->subtotal_label->setText("$" + QString::number(new_order->getSubtotal()));
+    ui->total_label->setText("$" + QString::number(new_order->getTotal()));
+}
 
 void MainWindow::on_no_confirmbutton_clicked()
 {
@@ -560,6 +565,29 @@ void MainWindow::on_yes_confirm_button_clicked()
         item_line2->addWidget(toppings);
         receipt_layout->addLayout(item_line2);
     }
+
+    // Add the footer.
+    QHBoxLayout *line_line = new QHBoxLayout();
+    QLabel *line = new QLabel(QString::fromStdString(string(60, '_')));
+    line_line->addWidget(line);
+    receipt_layout->addLayout(line_line);
+
+    // Add the subtotal line.
+    QHBoxLayout *subtotal_line = new QHBoxLayout();
+    QLabel *blank = new QLabel("");
+    QLabel *subtotal = new QLabel("Subtotal:  $" + QString::number(new_order->getSubtotal()));
+    subtotal->setStyleSheet("font: 12pt 'MS Shell Dlg 2';");
+    subtotal_line->addWidget(blank);
+    subtotal_line->addWidget(subtotal);
+    receipt_layout->addLayout(subtotal_line);
+
+    // Add the total line.
+    QHBoxLayout *total_line = new QHBoxLayout();
+    QLabel *total = new QLabel("Total:\t$" + QString::number(new_order->getTotal()));
+    total->setStyleSheet("font: 14pt 'MS Shell Dlg 2';");
+    total_line->addWidget(blank);
+    total_line->addWidget(total);
+    receipt_layout->addLayout(total_line);
 
     // Add the layout to the scroll area.
     ui->scrollAreaWidgetContents_2->setLayout(receipt_layout);

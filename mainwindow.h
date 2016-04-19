@@ -58,6 +58,8 @@ private slots:
 
     void update_list();
 
+    void update_totals();
+
     void on_no_confirmbutton_clicked();
 
     void on_yes_confirm_button_clicked();
