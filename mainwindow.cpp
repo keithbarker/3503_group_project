@@ -592,6 +592,7 @@ void MainWindow::on_yes_confirm_button_clicked()
     QHBoxLayout *subtotal_line = new QHBoxLayout();
     QLabel *blank = new QLabel("");
     QLabel *subtotal = new QLabel("Subtotal:  $" + QString::number(new_order->getSubtotal()));
+
     subtotal->setStyleSheet("font: 12pt 'MS Shell Dlg 2';");
     subtotal_line->addWidget(blank);
     subtotal_line->addWidget(subtotal);
