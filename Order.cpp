@@ -30,10 +30,6 @@ double Order::getTotal() {
     return ((int)(total*fixed_total))/fixed_total;
 }
 
-void Order::printReceipt() {
-	// need to know how gui works in order to implement
-}
-
 void Order::removeItem(int index) {
     vector<Item*>::iterator it;
     itemArray->erase(itemArray->begin() + index);

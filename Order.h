@@ -26,7 +26,6 @@ public:
 	void setTotal(double total);
 	double getTotal();
 
-	void printReceipt();
     void addItem(Item *toBeAdded);	// add food or drink to item array
     void removeItem(int id);	//remove food or drink from item array
 
