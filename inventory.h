@@ -22,7 +22,6 @@ class Inventory : public Order{ //stores counters for amount of food and drink i
 public:
     Inventory();
     void updateInventory(vector<Item*> *itemArray); //called when clicking new order on receipt page (updates all counters with
-    void addCount(std::string countName);
 
     void setHamburgerCount(int count);
     int getHamburgerCount();

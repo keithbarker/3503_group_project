@@ -16,11 +16,6 @@ Inventory::Inventory(){
      shakeCount = 100;
 }
 
-void Inventory::addCount(std::string countName){
-
-
-}
-
 void Inventory::updateInventory(vector<Item*> *itemArray){  //call only after order completed
 
      for (auto item : *itemArray){
