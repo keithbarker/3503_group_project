@@ -15,13 +15,19 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    // setup the gui.
     ui->setupUi(this);
+
+    // Create a new order and inventory.
     new_order = new Order();
     new_Inventory = new Inventory();
+
+    // Set up signals when items get added or removed.
     connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_list()));
     connect(new_order, SIGNAL(itemsChanged()), this, SLOT(update_totals()));
 
-    int inv_item = 0;
+    // Prevents the inventory menu from selecting an item to manage.
+    inv_item = 0;
 }
 
 MainWindow::~MainWindow()
@@ -33,7 +39,6 @@ void MainWindow::on_hamburger_button_clicked()
 {
     // Add the hamburger item to the scroll box.
     Item *hamburger_item = new Item();
-    hamburger_item->setId(new_order->getItemCount() + 1);
     hamburger_item->setItemsLeft(hamburger_item->getItemsLeft() - 1);
     hamburger_item->setPrice(3.99);
     hamburger_item->setName(string("Hamburger"));
@@ -42,6 +47,7 @@ void MainWindow::on_hamburger_button_clicked()
     vector<string> extras {"Bacon","Cheese","Lettuce","Tomatoes","Pickles","Onions","Ketchup","Mustard","Barbeque","Mayo"};
     hamburger_item->addAllowedExtras(extras);
 
+    // Add the hamburger to the order.
     new_order->addItem(hamburger_item);
 
     // Update the toppings page label.
@@ -68,7 +74,6 @@ void MainWindow::on_hotdog_button_clicked()
 
     // Add the hotdog item to the scroll box.
     Item *hotdog_item = new Item();
-    hotdog_item->setId(new_order->getItemCount() + 1);
     hotdog_item->setItemsLeft(hotdog_item->getItemsLeft() - 1);
     hotdog_item->setPrice(2.99);
     hotdog_item->setName(string("Hotdog"));
@@ -77,6 +82,7 @@ void MainWindow::on_hotdog_button_clicked()
     vector<string> extras {"Chili","Cheese","Onions","Sauerkraut","Relish","Ketchup","Mustard"};
     hotdog_item->addAllowedExtras(extras);
 
+    // Add the hotdog item to the order.
     new_order->addItem(hotdog_item);
 
     // Update the toppings page label.
@@ -91,6 +97,7 @@ void MainWindow::on_hotdog_button_clicked()
     button_factory("Ketchup",6);
     button_factory("Mustard",7);
 
+    // Navigate to the topping page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -98,7 +105,6 @@ void MainWindow::on_chick_sand_button_clicked()
 {
     // Add the chicken sandwich item to the scroll box.
     Item *chick_sand_item = new Item();
-    chick_sand_item->setId(new_order->getItemCount() + 1);
     chick_sand_item->setItemsLeft(chick_sand_item->getItemsLeft() - 1);
     chick_sand_item->setPrice(3.49);
     chick_sand_item->setName(string("Chicken Sandwich"));
@@ -106,6 +112,7 @@ void MainWindow::on_chick_sand_button_clicked()
     vector<string> extras {"Bacon","Cheese","Lettuce","Tomatoes","Pickles","Onions","Ketchup","Mustard","Barbeque","Mayo"};
     chick_sand_item->addAllowedExtras(extras);
 
+    // Add the chicken sandwich item to the order.
     new_order->addItem(chick_sand_item);
 
     // Update the toppings page label.
@@ -120,6 +127,7 @@ void MainWindow::on_chick_sand_button_clicked()
     button_factory("Mayo",6);
     button_factory("Barbeque",7);
 
+    // Navigate to the topping page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -128,7 +136,6 @@ void MainWindow::on_chick_nug_button_clicked()
 
     // Add the chicken nugget item to the scroll box.
     Item *chick_nug_item = new Item();
-    chick_nug_item->setId(new_order->getItemCount() + 1);
     chick_nug_item->setItemsLeft(chick_nug_item->getItemsLeft() - 1);
     chick_nug_item->setPrice(1.99);
     chick_nug_item->setName(string("Chicken Nuggets"));
@@ -136,6 +143,7 @@ void MainWindow::on_chick_nug_button_clicked()
     vector<string> extras {"Honey Mustard","Hot Sauce","Barbecue","Ketchup","Mustard"};
     chick_nug_item->addAllowedExtras(extras);
 
+    // Add the nuggets item to the order.
     new_order->addItem(chick_nug_item);
 
     // Update the toppings page label.
@@ -148,19 +156,19 @@ void MainWindow::on_chick_nug_button_clicked()
     button_factory("Ketchup",4);
     button_factory("Mustard",5);
 
-
+    // Navigate to the topping page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_salad_button_clicked()
 {
-    /// Add the salad item to the scroll box.
+    // Add the salad item to the scroll box.
     Item *salad_item = new Item();
-    salad_item->setId(new_order->getItemCount() + 1);
     salad_item->setItemsLeft(salad_item->getItemsLeft() - 1);
     salad_item->setPrice(3.99);
     salad_item->setName(string("Salad"));
 
+    // Add the salad item to the order.
     new_order->addItem(salad_item);
 
     vector<string> extras {"Tomoatoes","Croutons","Almonds","Walnuts","Bacon","Cheese","Onions","Cucumbers","Ranch","Italian","Caesar"
@@ -186,6 +194,7 @@ void MainWindow::on_salad_button_clicked()
     button_factory("Vinaigrette",13);
     button_factory("Olive Oil",14);
 
+    // Navigate to the topping page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -193,11 +202,11 @@ void MainWindow::on_fries_button_clicked()
 {
     // Add the fries item to the scroll box.
     Item *fries_item = new Item();
-    fries_item->setId(new_order->getItemCount() + 1);
     fries_item->setItemsLeft(fries_item->getItemsLeft() - 1);
     fries_item->setPrice(1.99);
     fries_item->setName(string("Fries"));
 
+    // Add the fries item to the order.
     new_order->addItem(fries_item);
 
     vector<string> extras {"Chili","Cheese","Bacon","Ketchup","Mustard"};
@@ -213,6 +222,7 @@ void MainWindow::on_fries_button_clicked()
     button_factory("Ketchup",4);
     button_factory("Mustard",5);
 
+    // Navigate to the topping page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -220,11 +230,11 @@ void MainWindow::on_soda_button_clicked()
 {
     // Add the soda item to the scroll box.
     Item *soda_item = new Item();
-    soda_item->setId(new_order->getItemCount() + 1);
     soda_item->setItemsLeft(soda_item->getItemsLeft() - 1);
     soda_item->setPrice(1.49);
     soda_item->setName(string("Soda"));
 
+    // Add the soda item to the order.
     new_order->addItem(soda_item);
 
     vector<string> extras {"Cherry","Cola","Orange","Lemon-Lime","Grape","Root Beer", "Ginger Ale","Water"};
@@ -243,6 +253,7 @@ void MainWindow::on_soda_button_clicked()
     button_factory("Ginger Ale",7);
     button_factory("Water",8);
 
+    // Navigate to the flavor page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -250,11 +261,11 @@ void MainWindow::on_tea_button_clicked()
 {
     // Add the tea item to the scroll box.
     Item *tea_item = new Item();
-    tea_item->setId(new_order->getItemCount() + 1);
     tea_item->setItemsLeft(tea_item->getItemsLeft() - 1);
     tea_item->setPrice(0.99);
     tea_item->setName(string("Tea"));
 
+    // Add the tea item to the order.
     new_order->addItem(tea_item);
 
     vector<string> extras {"Honey Mustard","Hot Sauce","Barbecue","Ketchup","Mustard"};
@@ -271,6 +282,7 @@ void MainWindow::on_tea_button_clicked()
     button_factory("Unsweet Tea",5);
     button_factory("Lemon Tea",6);
 
+    // Navigate to the flavor page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -278,11 +290,11 @@ void MainWindow::on_milk_shake_button_clicked()
 {
     // Add the milkshake item to the scroll box.
     Item *milkshake_item = new Item();
-    milkshake_item->setId(new_order->getItemCount() + 1);
     milkshake_item->setItemsLeft(milkshake_item->getItemsLeft() - 1);
     milkshake_item->setPrice(3.99);
     milkshake_item->setName(string("Milkshake"));
 
+    // Add the milkshake item to the order.
     new_order->addItem(milkshake_item);
 
     vector<string> extras {"Chocolate","Vanilla","Strawberry","Cherry","Whipped Cream", "Sprinkles"};
@@ -299,6 +311,7 @@ void MainWindow::on_milk_shake_button_clicked()
     button_factory("Whipped Cream",5);
     button_factory("Sprinkles",6);
 
+    // Navigate to the flavor page.
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -321,6 +334,7 @@ void MainWindow::on_done_button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 
+    // Clear out the topping buttons.
     clear_items(ui->gridLayout);
     clear_items(ui->gridLayout2);
     clear_items(ui->gridLayout3);
@@ -341,6 +355,8 @@ void MainWindow::on_done_button_clicked()
 void MainWindow::clear_items(QLayout *layout)
 {
     QLayoutItem *item;
+    // Take the layout/widget from the top of the given layout
+    // and delete it's contents.
     while((item = layout->takeAt(0)) != NULL)
     {
         if (item->layout()) {
@@ -355,6 +371,7 @@ void MainWindow::clear_items(QLayout *layout)
 
 void MainWindow::set_button_style(QPushButton *button)
 {
+    // Add the awesome color, size, and font to our buttons.
     button->setStyleSheet(
        "background-color: rgb(87, 137, 183);"
         "max-width: 150px;"
@@ -368,13 +385,19 @@ void MainWindow::set_button_style(QPushButton *button)
 }
 
 void MainWindow::button_factory(string name, int position) {
+    // Button factory used to create the topping buttons.
     QString topping_name = QString::fromStdString(name);
     QPushButton *topping_button = new QPushButton(topping_name);
     set_button_style(topping_button);
+
+    // Set up a function to be called when the buttons are toggled.
+    // In this case, I'm using a lambda to make an inline function.
     connect(topping_button, &QPushButton::toggled, [=] {
         Item *item = new_order->itemArray->back();
         if (topping_button->isChecked()) {
             item->addExtra(name);
+
+            // Adjust pricing for certian toppings.
             if (name == "Bacon") {
                 item->setPrice(item->getPrice() + 0.75);
             } else if (name == "Cheese") {
@@ -384,6 +407,8 @@ void MainWindow::button_factory(string name, int position) {
             }
         } else {
             item->removeExtra(name);
+
+            // Again, adjust pricing for certain toppings.
             if (name == "Bacon") {
                 item->setPrice(item->getPrice() - 0.75);
             } else if (name == "Cheese") {
@@ -392,9 +417,12 @@ void MainWindow::button_factory(string name, int position) {
                 item->setPrice(item->getPrice() - 0.75);
             }
         }
+
+        // Throw the signal that the items have changed.
         emit new_order->itemsChanged();
     });
 
+    // Decide where to put the button in the topping layouts.
     switch(position) {
     case 1:
         ui->gridLayout->addWidget(topping_button);
@@ -445,12 +473,19 @@ void MainWindow::button_factory(string name, int position) {
 }
 
 void MainWindow::update_list() {
+    // Updates the side list with the current list of items.
+    // This gets called when the Order::itemsChanged() signal is raised.
+
+    // Remove the old layout.
     if (ui->scrollAreaWidgetContents->layout())
         clear_items(ui->scrollAreaWidgetContents->layout());
         delete ui->scrollAreaWidgetContents->layout();
 
+    // Get the items from the order
     vector<Item*> *items = new_order->itemArray;
     vector<Item*>::iterator it;
+
+    // Create a new scroll layout and add the items to it.
     QVBoxLayout* scroll_layout = new QVBoxLayout();
     scroll_layout->setAlignment(Qt::AlignTop);
     int i = 0;
@@ -480,19 +515,25 @@ void MainWindow::update_list() {
         // In this case I'm using a lambda and using an inline function.
         connect(remove_button, &QPushButton::clicked, [=] {new_order->removeItem(i);});
     }
+
+    // Add the new scroll layout to the contents of the scroll area.
     ui->scrollAreaWidgetContents->setLayout(scroll_layout);
 }
 
 void MainWindow::update_totals() {
+    // Also called when Order::itemsChanges() is raised.
+    // updates the subtotal and total labels at the bottom of the main page.
     ui->subtotal_label->setText(QString::fromStdString(price_to_str(new_order->getSubtotal())));
     ui->total_label->setText(QString::fromStdString(price_to_str(new_order->getTotal())));
 }
 
 string MainWindow::price_to_str(double price) {
+    // Turn the double into a string.
     std::ostringstream strs;
     strs << price;
     string str_price = strs.str();
 
+    // Make sure the precision is 2 decimal places.
     size_t period = str_price.find(".");
     if (period != string::npos) {
         if (str_price.length() - period == 1) {
@@ -504,6 +545,8 @@ string MainWindow::price_to_str(double price) {
             str_price = "0" + str_price;
         }
     }
+
+    // Add a $ sign and give it back.
     str_price = "$" + str_price;
     return str_price;
 }
@@ -604,6 +647,8 @@ void MainWindow::on_yes_confirm_button_clicked()
 
 void MainWindow::on_receipt_done_button_clicked()
 {
+    // When the user is done and they select new order, update the inventory,
+    // delete the old order and return them to the main page.
     new_Inventory->updateInventory(new_order->itemArray);
     new_order->clearOrder();    //clears itemarray and totals
     ui->stackedWidget->setCurrentIndex(0);
@@ -611,6 +656,7 @@ void MainWindow::on_receipt_done_button_clicked()
 
 void MainWindow::on_password_enter_button_clicked()
 {
+    // Verify the user has access to the admin section.
     if(ui->password_box->text() == "admin")
     {
         ui->stackedWidget->setCurrentIndex(5);
@@ -636,6 +682,8 @@ void MainWindow::on_inventory_done_button_clicked()
 
 void MainWindow::on_password_box_editingFinished()
 {
+    // Same thing as on_password_enter_button_clicked()
+    // but allows the user to just press enter.
     if(ui->password_box->text() == "admin"){
         ui->stackedWidget->setCurrentIndex(5);
 
@@ -657,100 +705,136 @@ void MainWindow::on_password_box_editingFinished()
 
 void MainWindow::on_hamburger_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many hamburgers would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     this->inv_item = 1;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_hotdog_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many hotdogs would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 2;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_chick_sand_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many chicken sandwiches would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 3;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_chick_nug_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many chicken nuggets would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 4;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_salad_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many salads would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 5;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_fries_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many fries would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 6;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_soft_drink_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many soft drinks would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 7;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_tea_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How much tea would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 8;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
 void MainWindow::on_milkshake_inv_button_clicked()
 {
+    // Set the label for the manage page.
     ui->manage_label->setText("How many milkshakes would you like to add to the inventory?");
 
+    // Navigate to the manage inventory page.
     ui->stackedWidget->setCurrentIndex(6);
 
+    // This is how it knows which inventory item it needs to edit.
     inv_item = 9;
 
+    // Clean up.
     ui->manage_box->setText("");
 }
 
@@ -761,6 +845,7 @@ void MainWindow::on_manage_back_button_clicked()
 
 void MainWindow::on_inv_enter_button_clicked()
 {
+    // Determine which inventory item to update and update it with the provided value.
     switch(this->inv_item)
 
     {

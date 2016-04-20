@@ -10,7 +10,6 @@ class Item : public QObject //stores information for individual food and drink i
 
 private:
     Q_OBJECT
-    int id;
     int itemsLeft;
 	double price;
     string name;
@@ -25,13 +24,10 @@ public:
     Item(); //default constructor declaration
 
     //constructor called when instance of Food or Drink is created
-    Item(int id, int itemsLeft, double price, string name, string description, string size, string flavor, int quantity);
+    Item(int itemsLeft, double price, string name, string description, string size, string flavor, int quantity);
 
 	/*getters and setter
 	methods declaration*/
-
-    void setId(int id);
-    int getId();
 
 	void setItemsLeft(int itemsLeft);
 	int getItemsLeft();
