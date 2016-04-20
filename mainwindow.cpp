@@ -59,11 +59,6 @@ void MainWindow::on_hamburger_button_clicked()
     button_factory("Barbeque",9);
     button_factory("Mayo",10);
 
-    /*How are we going to handle different sizes and extras? For example,
-      each size has a different price, and some of the toppings should add
-      to the price as well (bacon, cheese, etc.)
-      */
-
     // This is what changes "pages".
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -96,12 +91,6 @@ void MainWindow::on_hotdog_button_clicked()
     button_factory("Ketchup",6);
     button_factory("Mustard",7);
 
-    /*How are we going to handle different sizes and extras? For example,
-      each size has a different price, and some of the toppings should add
-      to the price as well (bacon, cheese, etc.)
-      */
-
-
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -130,11 +119,6 @@ void MainWindow::on_chick_sand_button_clicked()
     button_factory("Pickles",5);;
     button_factory("Mayo",6);
     button_factory("Barbeque",7);
-
-    /*How are we going to handle different sizes and extras? For example,
-      each size has a different price, and some of the toppings should add
-      to the price as well (bacon, cheese, etc.)
-      */
 
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -471,15 +455,7 @@ void MainWindow::update_list() {
     scroll_layout->setAlignment(Qt::AlignTop);
     int i = 0;
     for (it = items->begin(); it != items->end(); it++, i++) {
-        std::ostringstream strs;
-        strs << (*it)->getPrice();
-        string str_price = strs.str();
-
-        if (str_price.length() == 3)
-            str_price += "0";
-        else if (str_price.length() == 2)
-            str_price = "0" + str_price;
-        str_price = "$" + str_price;
+        string str_price = price_to_str((*it)->getPrice());
 
         QPushButton *remove_button = new QPushButton("X");
         remove_button->setStyleSheet("color:white;background-color:rgb(195,50,46);max-width: 20px");
@@ -508,8 +484,28 @@ void MainWindow::update_list() {
 }
 
 void MainWindow::update_totals() {
-    ui->subtotal_label->setText("$" + QString::number(new_order->getSubtotal()));
-    ui->total_label->setText("$" + QString::number(new_order->getTotal()));
+    ui->subtotal_label->setText(QString::fromStdString(price_to_str(new_order->getSubtotal())));
+    ui->total_label->setText(QString::fromStdString(price_to_str(new_order->getTotal())));
+}
+
+string MainWindow::price_to_str(double price) {
+    std::ostringstream strs;
+    strs << price;
+    string str_price = strs.str();
+
+    size_t period = str_price.find(".");
+    if (period != string::npos) {
+        if (str_price.length() - period == 1) {
+            str_price += "00";
+        } else if (str_price.length() - period == 2) {
+            str_price += "0";
+        }
+        if (str_price.length() - period == str_price.length()) {
+            str_price = "0" + str_price;
+        }
+    }
+    str_price = "$" + str_price;
+    return str_price;
 }
 
 void MainWindow::on_no_confirmbutton_clicked()
@@ -556,15 +552,7 @@ void MainWindow::on_yes_confirm_button_clicked()
     vector<Item*>::iterator it;
     int i = 0;
     for (it = items->begin(); it != items->end(); it++, i++) {
-        std::ostringstream strs;
-        strs << (*it)->getPrice();
-        string str_price = strs.str();
-
-        if (str_price.length() == 3)
-            str_price += "0";
-        else if (str_price.length() == 2)
-            str_price = "0" + str_price;
-        str_price = "$" + str_price;
+        string str_price = price_to_str((*it)->getPrice());
 
         QLabel *item = new QLabel(QString::fromStdString((*it)->getName()));
         item->setStyleSheet("font: 75 14pt 'MS Shell Dlg 2';");
@@ -591,7 +579,7 @@ void MainWindow::on_yes_confirm_button_clicked()
     // Add the subtotal line.
     QHBoxLayout *subtotal_line = new QHBoxLayout();
     QLabel *blank = new QLabel("");
-    QLabel *subtotal = new QLabel("Subtotal:  $" + QString::number(new_order->getSubtotal()));
+    QLabel *subtotal = new QLabel("Subtotal:  " + QString::fromStdString(price_to_str(new_order->getSubtotal())));
 
     subtotal->setStyleSheet("font: 12pt 'MS Shell Dlg 2';");
     subtotal_line->addWidget(blank);
@@ -600,7 +588,7 @@ void MainWindow::on_yes_confirm_button_clicked()
 
     // Add the total line.
     QHBoxLayout *total_line = new QHBoxLayout();
-    QLabel *total = new QLabel("Total:\t$" + QString::number(new_order->getTotal()));
+    QLabel *total = new QLabel("Total:\t" + QString::fromStdString(price_to_str(new_order->getTotal())));
     total->setStyleSheet("font: 14pt 'MS Shell Dlg 2';");
     total_line->addWidget(blank);
     total_line->addWidget(total);

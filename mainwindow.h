@@ -25,6 +25,8 @@ public:
 
     void button_factory(string name, int position);
 
+    string price_to_str(double price);
+
 private slots:
     void on_hamburger_button_clicked();
 

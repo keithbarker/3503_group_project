@@ -17,9 +17,7 @@ void Order::setSubtotal(double subtotal) {
 
 double Order::getSubtotal() {
     findSubtotal();
-    double fixed_sub = pow(10, 2);
-
-    return ((int)(subtotal*fixed_sub))/fixed_sub;
+    return subtotal;
 }
 
 void Order::setTotal(double total) {
